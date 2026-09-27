@@ -479,6 +479,83 @@
     .cf-list, .cc-learn { grid-template-columns: 1fr; }
   }
 
+  /* ============ Lash style guide ============ */
+  .lash-guide { border-top: 1px solid var(--line); }
+  .ls { margin-top: 44px; border: 1px solid var(--line); background: var(--ink-2); }
+  .ls-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+  .ls-tab {
+    position: relative; padding: 18px 12px 16px; border: 0; background: transparent; cursor: pointer; color: var(--muted);
+    display: grid; gap: 4px; justify-items: center; text-align: center; transition: color .3s, background .3s;
+  }
+  .ls-tab + .ls-tab { border-left: 1px solid var(--line); }
+  .ls-tab span { font: italic 500 1.35rem/1.1 var(--display); }
+  .ls-tab small { font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; }
+  .ls-tab::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--gold-metal);
+    transform: scaleX(0); transition: transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .ls-tab:hover { color: var(--cream); }
+  .ls-tab[aria-selected="true"] { color: var(--gold); background: linear-gradient(180deg, transparent, rgba(226,196,139,.06)); }
+  .ls-tab[aria-selected="true"]::after { transform: scaleX(1); }
+  .ls-body { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; padding: clamp(22px, 4vw, 44px); }
+  .ls-art { background: radial-gradient(ellipse at 50% 60%, rgba(226,196,139,.08), transparent 70%); }
+  .ls-art svg { width: 100%; height: auto; display: block; overflow: visible; }
+  #lsLashes path { fill: none; stroke: url(#lsGold); stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; animation: lashDraw .7s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes lashDraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  .ls-copy { display: grid; gap: 14px; justify-items: start; }
+  .ls-copy h3 { margin: 0; font: 500 2.2rem/1.05 var(--display); }
+  .ls-copy p { margin: 0; color: var(--muted); max-width: 46ch; }
+  .ls-points { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .ls-points li { font-size: .8rem; padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; }
+  .ls-best span:first-child { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-right: 6px; }
+  .ls-best { color: var(--cream) !important; }
+  .ls-copy .btn { margin-top: 8px; }
+  .ls-copy.swap { animation: lsSwap .5s cubic-bezier(.2,.7,.2,1); }
+  @keyframes lsSwap { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  /* ============ Reviews ============ */
+  .reviews { border-top: 1px solid var(--line); overflow: hidden; }
+  .rv-track { margin-top: 40px; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(280px, 380px); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; scrollbar-width: thin; }
+  .rv-card { margin: 0; scroll-snap-align: start; border: 1px solid var(--line); background: var(--ink-2); padding: 26px 24px; display: flex; flex-direction: column; gap: 14px; }
+  .rv-stars { color: var(--gold); letter-spacing: .2em; font-size: .9rem; }
+  .rv-text { margin: 0; font: italic 500 1.2rem/1.45 var(--display); color: var(--cream); display: -webkit-box; -webkit-line-clamp: 7; -webkit-box-orient: vertical; overflow: hidden; }
+  .rv-meta { margin-top: auto; font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .rv-meta b { color: var(--gold); font-weight: 500; }
+
+  /* ============ FAQ ============ */
+  .faq { border-top: 1px solid var(--line); }
+  .faq-wrap { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
+  .faq-head { position: sticky; top: 110px; }
+  .faq-head p:last-child { margin-top: 26px; }
+  .faq-list { border-top: 1px solid var(--line); }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item summary {
+    list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 18px;
+    padding: 22px 0; font: 500 1.3rem/1.3 var(--display); color: var(--cream); transition: color .3s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover, .faq-item[open] summary { color: var(--gold); }
+  .faq-item summary i { position: relative; width: 14px; height: 14px; flex: none; }
+  .faq-item summary i::before, .faq-item summary i::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--gold); transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+  .faq-item summary i::after { transform: rotate(90deg); }
+  .faq-item[open] summary i::after { transform: rotate(0); }
+  .faq-a { overflow: hidden; }
+  .faq-a p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+  .faq-a a { color: var(--gold); }
+  .faq-item[open] .faq-a { animation: faqOpen .5s cubic-bezier(.2,.7,.2,1); }
+  @keyframes faqOpen { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+  /* Anchor jumps land below the sticky header */
+  section[id] { scroll-margin-top: 70px; }
+
+  @media (max-width: 860px) {
+    .ls-body, .faq-wrap { grid-template-columns: 1fr; }
+    .faq-head { position: static; }
+    .ls-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ls-tab:nth-child(3) { border-left: 0; }
+    .ls-tab:nth-child(n+3) { border-top: 1px solid var(--line); }
+  }
+
   /* ============ Opening animation (loading gauge) ============ */
   .intro { display: none; }
   html.intro-on:not(.intro-done) body { overflow: hidden; }
@@ -573,6 +650,7 @@
       <a class="link" href="#academy">Academy</a>
       <a class="link" href="#updates" id="navUpdates" hidden>Updates</a>
       <a class="link" href="#latest">Latest work</a>
+      <a class="link" href="#faq">FAQ</a>
       <a class="btn" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book now</a>
     </nav>
   </div>
@@ -612,35 +690,71 @@
         <article class="svc" data-reveal style="--d:.1s">
           <p class="svc-price">See booking page</p>
           <h3>Lashes &amp; Brows</h3>
-          <p>We specialise in bespoke signature wispy lash extensions. Every set is custom-made to suit your eyes, instead of an everyday classic or volume set.</p>
-          <ul><li>Bespoke signature wispy lash sets</li><li>Lash lift &amp; tint</li><li>Brow wax &amp; tint</li><li>Hybrid brows &amp; lamination</li></ul>
+          <p>We specialise in bespoke lash and brow treatments, tailored to enhance your individual features. Every lash set is customised to complement your eye shape, desired look and personal style, from soft and natural to full and fluffy.</p>
+          <ul><li>Signature wispy lash sets</li><li>Classic, angel &amp; volume lash sets</li><li>Korean lash lift</li><li>Brow wax &amp; tint</li><li>Hybrid brows</li><li>Brow lamination</li><li>Microblading</li></ul>
           <a class="more" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book lashes &amp; brows →</a>
         </article>
         <article class="svc" data-reveal style="--d:.2s">
           <p class="svc-price">See booking page</p>
           <h3>Gel Nails</h3>
-          <p>Neat, glossy gel nails that last, in a huge range of shades.</p>
-          <ul><li>Gel nails</li><li>Wide colour range</li><li>Clean, long-lasting finish</li></ul>
+          <p>Beautiful, long-lasting nails tailored to you. Choose from Builder Gel, Hard Gel or Gel Polish, with a wide range of colours and finishes to create your perfect look.</p>
+          <ul><li>Builder gel (BIAB)</li><li>Hard gel</li><li>Gel polish</li><li>Wide range of colours &amp; finishes</li><li>Beautiful, long-lasting results</li></ul>
           <a class="more" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book nails →</a>
         </article>
         <article class="svc" data-reveal style="--d:.3s">
           <p class="svc-price">From £30</p>
           <h3>Fine Line Tattoos</h3>
           <p>Delicate fine line tattoos. Bring your idea and we'll design it with you.</p>
-          <ul><li>Custom fine line designs</li><li>Small, delicate pieces</li><li>Priced by design</li></ul>
+          <ul><li>Custom fine line designs</li><li>Minimalist designs</li><li>Small, delicate pieces</li><li>Priced by design</li></ul>
           <a class="more" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book a tattoo →</a>
         </article>
         <article class="svc" data-reveal style="--d:.4s">
           <p class="svc-price">£190</p>
-          <h3>Microblading</h3>
-          <p>Natural-looking, hair-stroke brows that save you time every morning.</p>
-          <ul><li>Brows mapped to your face</li><li>8-week top-up included</li><li>Aftercare advice</li></ul>
+          <h3>PMU Microblading</h3>
+          <p>Wake up to beautifully defined, natural-looking brows with PMU (Permanent Makeup) Microblading. Each set is carefully mapped and completely bespoke to your facial features, using fine hair strokes to create a soft, realistic and beautifully balanced finish.</p>
+          <ul><li>PMU microblading</li><li>Bespoke brow mapping</li><li>Natural, realistic hair strokes</li><li>Tailored shape &amp; colour</li><li>8-week top-up included</li><li>Full aftercare advice &amp; guidance</li></ul>
           <a class="more" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book microblading →</a>
         </article>
       </div>
       <p class="svc-note" data-reveal>Appointments only, no walk-ins. The full price list is on our <a class="inline" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">booking page</a>.</p>
     </div>
   </section>
+
+  <section id="lash-guide" class="lash-guide">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Lash style guide</p>
+      <h2 data-reveal style="--d:.08s">Find your <em>lash style</em></h2>
+      <p class="lede" data-reveal style="--d:.16s">Every set is tailored to your eye shape and the look you love. Tap a style to see how it looks. Not sure? We'll help you choose at your appointment.</p>
+
+      <div class="ls" data-reveal>
+        <div class="ls-tabs" role="tablist" aria-label="Lash styles"><button class="ls-tab" type="button" role="tab" id="ls-tab-wispy" aria-controls="ls-panel" aria-selected="true" data-style="wispy"><span>Signature Wispy</span><small>Our signature</small></button><button class="ls-tab" type="button" role="tab" id="ls-tab-classic" aria-controls="ls-panel" aria-selected="false" data-style="classic"><span>Classic</span><small>Natural</small></button><button class="ls-tab" type="button" role="tab" id="ls-tab-angel" aria-controls="ls-panel" aria-selected="false" data-style="angel"><span>Angel</span><small>Soft & airy</small></button><button class="ls-tab" type="button" role="tab" id="ls-tab-volume" aria-controls="ls-panel" aria-selected="false" data-style="volume"><span>Volume</span><small>Full & fluffy</small></button></div>
+        <div class="ls-body" id="ls-panel" role="tabpanel" aria-live="polite">
+          <div class="ls-art">
+            <svg id="lsSvg" viewBox="0 0 400 220" role="img" aria-label="Illustration of the selected lash style">
+              <defs>
+                <linearGradient id="lsGold" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#b98f4f"/><stop offset=".5" stop-color="#f3dfb2"/><stop offset="1" stop-color="#c9a262"/>
+                </linearGradient>
+              </defs>
+              <path d="M60 150 Q200 40 340 150" fill="none" stroke="url(#lsGold)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M60 150 Q200 214 340 150" fill="none" stroke="rgba(226,196,139,.35)" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="200" cy="143" r="30" fill="none" stroke="rgba(226,196,139,.3)" stroke-width="1.5"/>
+              <circle cx="200" cy="143" r="12" fill="rgba(226,196,139,.22)"/>
+              <g id="lsLashes"></g>
+            </svg>
+          </div>
+          <div class="ls-copy">
+            <h3 id="lsName">Signature Wispy</h3>
+            <p id="lsText"></p>
+            <ul class="ls-points" id="lsPoints"></ul>
+            <p class="ls-best"><span>Best if</span> <span id="lsBest"></span></p>
+            <a class="btn" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book your lashes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="application/json" id="lsData">{"wispy":{"name":"Signature Wispy","text":"Textured and fluttery, with longer spikes mixed through softer fans for a light, wispy finish that looks effortless.","points":["Textured, feathery finish","Spikes for definition","Our most requested set"],"best":"You want a soft, on-trend look with movement and texture."},"classic":{"name":"Classic","text":"One extension on each natural lash. Clean and defined, like your own lashes with a coat of mascara.","points":["Natural, polished look","Lightweight","Great first set"],"best":"You want to look like you, just more awake."},"angel":{"name":"Angel","text":"Light and airy with delicate fans and fine spikes, for a soft, fluffy set that still looks weightless.","points":["Soft and fluffy","Delicate spikes","Light on the eye"],"best":"You want something in between natural and full."},"volume":{"name":"Volume","text":"Handmade fans of ultra-fine lashes on each natural lash, for a fuller, darker, fluffy lash line.","points":["Full and dense","Dark, fluffy lash line","Made-up look every day"],"best":"You love a glam look, or have sparse natural lashes."}}</script>
 
   <section id="about" class="about">
     <div class="wrap">
@@ -653,7 +767,7 @@
         <h2>Hi, I'm <em>Ramone</em></h2>
         <p>I'm a mum of four with a huge passion for the beauty industry. I've worked in beauty for six years, qualifying in lashes and brows in 2022, and I've since worked in salons, including running my own, before opening my own home salon.</p>
         <p>In 2026 RJS Beauty Room was named one of the UK's Top 50 Best Home Salons at the UK Hair &amp; Beauty Awards.</p>
-        <p>I qualified to teach in January 2026 and now run accredited 1:1 courses. I love helping people grow their confidence and skills, and I'm always learning so I can give my clients and students the very best.</p>
+        <p>I qualified to teach in January 2026 and now run accredited 1:1 and group courses. I love helping people grow their confidence and skills, and I'm always learning so I can give my clients and students the very best.</p>
         <dl class="facts">
           <div><dt>6</dt><dd>years in beauty</dd></div>
           <div><dt>2022</dt><dd>qualified in lashes &amp; brows</dd></div>
@@ -670,7 +784,7 @@
         <div>
           <p class="eyebrow" data-reveal>Training Academy</p>
           <h2 data-reveal style="--d:.08s">Learn the trade <em>with us</em></h2>
-          <p class="lede" data-reveal style="--d:.16s">Accredited 1:1 courses taught in person, one skill at a time. Small, supportive and practical, with live models and continued support after you qualify.</p>
+          <p class="lede" data-reveal style="--d:.16s">Accredited courses taught in person, one to one or in small group classes. Supportive and practical, with live models and continued support after you qualify.</p>
         </div>
         <span class="glint" data-reveal style="--d:.15s"><img src="assets/logo.webp" alt="" width="700" height="637" loading="lazy"></span>
       </div>
@@ -679,9 +793,9 @@
         <div class="cf-main">
           <p class="cf-kicker">Your new chapter starts here</p>
           <h3>Beginner Lash Training</h3>
-          <p class="cf-sub">One full day · fast track to volume</p>
+          <p class="cf-sub">Small group class of 3 · one full day · fast track to volume</p>
           <p>A flexible, supportive course designed for mums who want more freedom, more income and more time with their family. Learn to work around school hours, from home, on your own terms.</p>
-          <ul class="cf-list"><li>1 full day</li><li>Fast track to volume</li><li>2 live models</li><li>Full theory</li><li>Full kit included</li><li>Certificate provided</li><li>Insurable on completion</li><li>BTA accredited</li><li>Beginner friendly</li><li>Supportive mum community</li></ul>
+          <ul class="cf-list"><li>Small group class, only 3 students</li><li>1 full day</li><li>Fast track to volume</li><li>2 live models</li><li>Full theory</li><li>Full kit included</li><li>Certificate provided</li><li>Insurable on completion</li><li>BTA accredited</li><li>Beginner friendly</li><li>Supportive mum community</li></ul>
         </div>
         <div class="cf-side">
           <p class="cf-price">£499</p>
@@ -703,8 +817,8 @@
 
         <article class="course-card" data-reveal style="--d:.12s">
           <div class="cc-head">
-            <h3>1:1 Courses</h3>
-            <p class="cc-price small">Mastering one skill at a time</p>
+            <h3>1:1 &amp; Group Courses</h3>
+            <p class="cc-price small">One to one, or join a small group class</p>
           </div>
           <ul class="price-list"><li><span class="c-name">Classic lash extensions <small>Kit included</small></span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£299</span></li><li><span class="c-name">Volume lash extensions <small>Kit included</small></span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£299</span></li><li><span class="c-name">Lash lift &amp; tint</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£175</span></li><li><span class="c-name">Brow wax &amp; tint</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£175</span></li><li><span class="c-name">Hybrid brows</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£175</span></li><li><span class="c-name">Brow lamination</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£175</span></li><li><span class="c-name">Lash masterclass</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£200</span></li><li><span class="c-name">Lash refresher class</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£250</span></li></ul>
           <p class="cc-label">Every course includes</p>
@@ -785,6 +899,32 @@
       </div>
     </div>
   </dialog>
+
+  <section id="reviews" class="reviews" hidden>
+    <div class="wrap">
+      <div class="feed-head">
+        <div>
+          <p class="eyebrow" data-reveal>Kind words</p>
+          <h2 data-reveal style="--d:.08s">What our <em>clients say</em></h2>
+          <p class="lede" data-reveal style="--d:.16s">Reviews from our Facebook page.</p>
+        </div>
+        <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61563781078767&amp;sk=reviews" target="_blank" rel="noopener">All reviews</a>
+      </div>
+      <div class="rv-track" id="rvTrack" data-reveal></div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap faq-wrap">
+      <div class="faq-head">
+        <p class="eyebrow" data-reveal>Good to know</p>
+        <h2 data-reveal style="--d:.08s">Your questions, <em>answered</em></h2>
+        <p class="lede" data-reveal style="--d:.16s">Can't find what you're looking for? Send us a message and we'll get back to you.</p>
+        <p data-reveal style="--d:.24s"><a class="btn ghost" href="https://www.facebook.com/profile.php?id=61563781078767" target="_blank" rel="noopener">Ask a question</a></p>
+      </div>
+      <div class="faq-list" data-reveal><details class="faq-item" open><summary><span>How do I book?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>Book online through our <a href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">booking page</a>, where you can see every treatment and pick a time that suits you. If you have a question first, <a href="https://www.facebook.com/profile.php?id=61563781078767" target="_blank" rel="noopener">message us on Facebook</a>.</p></div></details><details class="faq-item"><summary><span>Is there a booking fee?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>Yes. A non-refundable booking fee is needed to secure your appointment.</p></div></details><details class="faq-item"><summary><span>What if I need to cancel or move my appointment?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>Please give us at least 48 hours' notice. Cancellations within 48 hours are charged at 50% of the treatment price, and missed appointments are charged in full. We know life happens, so just get in touch as early as you can.</p></div></details><details class="faq-item"><summary><span>Do I need a patch test?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>For lash extensions, lash lifts, tints and PMU microblading, a patch test may be needed before your first appointment. We'll let you know when you book.</p></div></details><details class="faq-item"><summary><span>How should I prepare for lash extensions?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>Come with clean lashes, free of mascara and make-up. Avoid oil-based products around the eyes on the day, and skip caffeine if you find it hard to keep still. You'll lie back with your eyes closed, and most people find it really relaxing.</p></div></details><details class="faq-item"><summary><span>How long do lash extensions last, and when do I need an infill?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>Extensions shed naturally with your own lashes. Most clients book an infill every 2 to 3 weeks to keep their set looking full. Following your aftercare helps them last.</p></div></details><details class="faq-item"><summary><span>Which lash style should I choose?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>Have a look at our <a href="#lash-guide">lash style guide</a>. Every set is tailored to your eye shape and the look you want, so if you're not sure, we'll help you decide at your appointment.</p></div></details><details class="faq-item"><summary><span>How long does PMU microblading last?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>Results vary with skin type and lifestyle. Your 8-week top-up is included in the price, and we'll give you full aftercare advice so your brows heal beautifully.</p></div></details><details class="faq-item"><summary><span>Can I bring my own tattoo design?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>Of course. Bring your idea, a picture or a reference and we'll create a fine line or minimalist design with you. Tattoo prices start from £30 and depend on the design.</p></div></details><details class="faq-item"><summary><span>Where are you based?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>We're in Sheffield. We work by appointment only, and your full address is sent to you when you book.</p></div></details><details class="faq-item"><summary><span>Do you run beauty training courses?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p>Yes. We offer accredited 1:1 and small group courses in lashes and brows, from beginner lash training to lash lift and brow lamination. See the <a href="#academy">Training Academy</a> for courses and prices.</p></div></details></div>
+    </div>
+  </section>
 
   <section id="contact" class="visit">
     <div class="wrap">
@@ -879,6 +1019,152 @@
       window.addEventListener("keydown", skip);
     } else {
       root.classList.add("intro-revealed");
+    }
+
+
+    // ---------- Smooth scrolling (desktop mouse/trackpad only) ----------
+    var smoothTo = null;
+    (function () {
+      if (still || !window.matchMedia || !matchMedia("(pointer: fine)").matches) return;
+      root.style.scrollBehavior = "auto";
+      var target = window.scrollY, current = target, running = false;
+      var maxY = function () { return document.documentElement.scrollHeight - window.innerHeight; };
+      var loop = function () {
+        current += (target - current) * 0.12;
+        if (Math.abs(target - current) < 0.5) { current = target; running = false; }
+        window.scrollTo(0, current);
+        if (running) requestAnimationFrame(loop);
+      };
+      var go = function () { if (!running) { running = true; requestAnimationFrame(loop); } };
+      var innerScroller = function (el) {
+        for (; el && el !== document.body && el !== root; el = el.parentElement) {
+          var oy = getComputedStyle(el).overflowY;
+          if ((oy === "auto" || oy === "scroll") && el.scrollHeight > el.clientHeight + 1) return true;
+        }
+        return false;
+      };
+      window.addEventListener("wheel", function (e) {
+        if (e.ctrlKey || e.defaultPrevented) return;                               // pinch-zoom
+        if (root.classList.contains("intro-on") && !root.classList.contains("intro-done")) return;
+        if (document.querySelector("dialog[open]")) return;                         // lightbox
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;                        // sideways swipes
+        if (innerScroller(e.target)) return;
+        e.preventDefault();
+        if (!running) current = target = window.scrollY;
+        var d = e.deltaY * (e.deltaMode === 1 ? 40 : e.deltaMode === 2 ? window.innerHeight : 1);
+        target = Math.max(0, Math.min(maxY(), target + d));
+        go();
+      }, { passive: false });
+      window.addEventListener("scroll", function () { if (!running) current = target = window.scrollY; }, { passive: true });
+      smoothTo = function (y) { if (!running) current = window.scrollY; target = Math.max(0, Math.min(maxY(), y)); go(); };
+    })();
+
+    // In-page links glide to their section, clear of the sticky header
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      var id = a.getAttribute("href").slice(1);
+      var el = id ? document.getElementById(id) : document.body;
+      if (!el) return;
+      e.preventDefault();
+      var y = id === "top" || !id ? 0 : el.getBoundingClientRect().top + window.scrollY - 70;
+      if (smoothTo) smoothTo(y); else window.scrollTo({ top: y, behavior: still ? "auto" : "smooth" });
+      if (id && history.replaceState) history.replaceState(null, "", "#" + id);
+    });
+
+    // ---------- Lash style guide ----------
+    (function () {
+      var dataEl = document.getElementById("lsData");
+      if (!dataEl) return;
+      var STYLES = JSON.parse(dataEl.textContent);
+      var g = document.getElementById("lsLashes"), copy = document.querySelector(".ls-copy");
+      var NS = "http://www.w3.org/2000/svg";
+      // upper lid: quadratic curve (60,150) -> ctrl (200,40) -> (340,150)
+      var P0 = [60, 150], P1 = [200, 40], P2 = [340, 150];
+      var at = function (t) {
+        var u = 1 - t;
+        return [u*u*P0[0] + 2*u*t*P1[0] + t*t*P2[0], u*u*P0[1] + 2*u*t*P1[1] + t*t*P2[1]];
+      };
+      var normal = function (t) {
+        var dx = 2*(1-t)*(P1[0]-P0[0]) + 2*t*(P2[0]-P1[0]);
+        var dy = 2*(1-t)*(P1[1]-P0[1]) + 2*t*(P2[1]-P1[1]);
+        var len = Math.hypot(dx, dy);
+        return [dy/len, -dx/len];
+      };
+      var rot = function (v, deg) { var r = deg*Math.PI/180, c = Math.cos(r), s = Math.sin(r); return [v[0]*c - v[1]*s, v[0]*s + v[1]*c]; };
+      var smooth = function (x) { x = Math.max(0, Math.min(1, x)); return x*x*(3-2*x); };
+      var CFG = {
+        classic: { n: 30, fan: [0],               len: 1.0,  w: 2.4, spikeEvery: 0 },
+        volume:  { n: 32, fan: [-16,-8,0,8,16],  len: 1.02, w: .8,  spikeEvery: 0 },
+        wispy:   { n: 32, fan: [-10,0,10],        len: .86, w: .95, spikeEvery: 4, spikeLen: 1.45, spikeW: 2.1 },
+        angel:   { n: 32, fan: [-9,0,9],          len: .8,  w: .75, spikeEvery: 5, spikeLen: 1.22, spikeW: 1.4 }
+      };
+      var lash = function (b, dir, L, w, delay) {
+        var tip = [b[0] + dir[0]*L, b[1] + dir[1]*L];
+        var bend = rot(dir, 18);                                   // gentle upward curl
+        var c = [b[0] + bend[0]*L*.55, b[1] + bend[1]*L*.55 - L*.08];
+        var p = document.createElementNS(NS, "path");
+        p.setAttribute("d", "M" + b[0].toFixed(1) + " " + b[1].toFixed(1) + " Q" + c[0].toFixed(1) + " " + c[1].toFixed(1) + " " + tip[0].toFixed(1) + " " + tip[1].toFixed(1));
+        p.setAttribute("pathLength", "1");
+        p.setAttribute("stroke-width", w);
+        p.style.animationDelay = delay.toFixed(3) + "s";
+        g.appendChild(p);
+      };
+      var draw = function (key) {
+        var c = CFG[key];
+        g.textContent = "";
+        for (var i = 0; i < c.n; i++) {
+          var t = .05 + .9 * (i / (c.n - 1));
+          var b = at(t), nrm = rot(normal(t), (t - .5) * 50);      // fan out towards the corners
+          var base = 24 + 30 * smooth((t - .05) / .75) - 10 * smooth((t - .88) / .12);
+          var delay = i * .012;
+          var spike = c.spikeEvery && i % c.spikeEvery === 2;
+          if (spike) { lash(b, nrm, base * c.spikeLen, c.spikeW, delay); continue; }
+          for (var f = 0; f < c.fan.length; f++) lash(b, rot(nrm, c.fan[f]), base * c.len * (1 - Math.abs(c.fan[f]) / 90), c.w, delay);
+        }
+      };
+      var select = function (key) {
+        var d = STYLES[key];
+        document.querySelectorAll(".ls-tab").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.style === key ? "true" : "false"); });
+        document.getElementById("lsName").textContent = d.name;
+        document.getElementById("lsText").textContent = d.text;
+        document.getElementById("lsBest").textContent = d.best.charAt(0).toLowerCase() + d.best.slice(1);
+        var ul = document.getElementById("lsPoints"); ul.textContent = "";
+        d.points.forEach(function (p) { var li = document.createElement("li"); li.textContent = p; ul.appendChild(li); });
+        copy.classList.remove("swap"); void copy.offsetWidth; copy.classList.add("swap");
+        draw(key);
+      };
+      document.querySelector(".ls-tabs").addEventListener("click", function (e) {
+        var b = e.target.closest(".ls-tab"); if (b) select(b.dataset.style);
+      });
+      document.querySelector(".ls-tabs").addEventListener("keydown", function (e) {
+        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+        var tabs = Array.prototype.slice.call(document.querySelectorAll(".ls-tab"));
+        var i = tabs.indexOf(document.activeElement); if (i < 0) return;
+        var n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+        n.focus(); select(n.dataset.style);
+      });
+      select("wispy");
+    })();
+
+    // ---------- Reviews from Facebook ----------
+    function renderReviews(list) {
+      list = (list || []).filter(function (r) { return r.text; });
+      if (!list.length) return;
+      var track = document.getElementById("rvTrack");
+      list.forEach(function (r) {
+        var card = document.createElement("figure"); card.className = "rv-card";
+        var stars = document.createElement("div"); stars.className = "rv-stars"; stars.setAttribute("aria-label", "Recommended"); stars.textContent = "★★★★★";
+        var q = document.createElement("blockquote"); q.className = "rv-text"; q.textContent = "“" + r.text + "”";
+        var meta = document.createElement("figcaption"); meta.className = "rv-meta";
+        var d = new Date(r.date);
+        var when = isNaN(d) ? "" : d.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+        if (r.name) { var b = document.createElement("b"); b.textContent = r.name; meta.appendChild(b); if (when) meta.appendChild(document.createTextNode(" · " + when)); }
+        else meta.textContent = when;
+        card.appendChild(stars); card.appendChild(q); card.appendChild(meta);
+        track.appendChild(card);
+      });
+      document.getElementById("reviews").hidden = false;
     }
 
     // Header deepens on scroll; banner drifts gently (parallax)
@@ -1049,6 +1335,7 @@
       .then(function (data) {
         var all = data.posts || [];
         renderNews(all);
+        renderReviews(data.reviews);
         // Gallery: the page's own photos and videos (not shared-link previews)
         posts = all.filter(function (p) { return p.images && p.images.length && p.gallery !== false; });
         if (!posts.length) { empty.hidden = false; return; }

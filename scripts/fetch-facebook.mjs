@@ -13,6 +13,7 @@ const API = process.env.FB_API_BASE || "https://graph.facebook.com/v23.0";
 const MAX_POSTS = 40;        // how many posts to keep on the site
 const MAX_IMAGES_PER_POST = 8;
 const MAX_IG = 30;          // how many Instagram posts to add to the gallery
+const MAX_REVIEWS = 12;     // how many Facebook reviews to show
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const DATA_DIR = path.join(ROOT, "data");
@@ -114,6 +115,29 @@ async function instagramPosts() {
   }).filter((p) => p.images.length);
 }
 
+// Facebook reviews ("recommends RJS Beauty Room"). Only positive reviews with
+// real text are shown, newest first, with the reviewer's first name and initial.
+async function facebookReviews() {
+  const fields = "created_time,recommendation_type,review_text,rating,reviewer{name}";
+  let res;
+  try {
+    res = await graph(`/me/ratings?fields=${encodeURIComponent(fields)}&limit=100`);
+  } catch (err) {
+    console.warn(`Reviews skipped: ${err.message}`);
+    return [];
+  }
+  const shortName = (n) => {
+    const parts = (n || "").trim().split(/\s+/).filter(Boolean);
+    if (!parts.length) return "";
+    return parts.length > 1 ? `${parts[0]} ${parts[parts.length - 1][0]}.` : parts[0];
+  };
+  return (res.data || [])
+    .filter((r) => (r.recommendation_type === "positive" || (r.rating || 0) >= 4) && (r.review_text || "").trim().length >= 15)
+    .sort((a, b) => new Date(b.created_time) - new Date(a.created_time))
+    .slice(0, MAX_REVIEWS)
+    .map((r) => ({ name: shortName(r.reviewer && r.reviewer.name), text: r.review_text.trim(), date: r.created_time }));
+}
+
 // Same post shared to both Facebook and Instagram? Keep the Facebook copy.
 const norm = (t) => (t || "").toLowerCase().replace(/[^a-z0-9]+/g, "").slice(0, 80);
 function isDuplicate(igPost, fbPosts) {
@@ -183,16 +207,19 @@ async function main() {
     if (f.endsWith(".jpg") && !keep.has(f)) await unlink(path.join(IMG_DIR, f));
   }
 
-  // Only rewrite the file if the posts changed, so the repo isn't committed to every run.
+  const reviews = await facebookReviews();
+
+  // Only rewrite the file if something changed, so the repo isn't committed to every run.
   let previous = null;
   try { previous = JSON.parse(await readFile(JSON_PATH, "utf8")); } catch {}
-  if (previous && JSON.stringify(previous.posts) === JSON.stringify(out)) {
+  if (previous && JSON.stringify(previous.posts) === JSON.stringify(out) &&
+      JSON.stringify(previous.reviews || []) === JSON.stringify(reviews)) {
     console.log(`No new posts. ${out.length} posts on the site.`);
     return;
   }
-  await writeFile(JSON_PATH, JSON.stringify({ updated: new Date().toISOString(), posts: out }, null, 2) + "\n");
+  await writeFile(JSON_PATH, JSON.stringify({ updated: new Date().toISOString(), posts: out, reviews }, null, 2) + "\n");
   const n = (src) => out.filter((p) => p.source === src).length;
-  console.log(`Site updated: ${n("facebook")} Facebook posts and ${n("instagram")} Instagram posts.`);
+  console.log(`Site updated: ${n("facebook")} Facebook posts, ${n("instagram")} Instagram posts and ${reviews.length} reviews.`);
 }
 
 async function fetchPage(fullUrl) {

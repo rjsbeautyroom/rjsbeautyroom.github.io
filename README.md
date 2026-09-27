@@ -61,6 +61,7 @@ After a minute or two the site shows the latest Facebook and Instagram posts. Fr
 ## Good to know
 
 - **What goes where.** Every Facebook post with a caption appears under **News & updates**, newest first. Photos and videos from both Facebook and Instagram appear in the **Latest work** gallery, newest first. If the same post was shared to both, it only appears once. Shared links show their preview image in News & updates but stay out of the gallery. Videos show their thumbnail and link out to play. The site keeps the latest 40 Facebook and 30 Instagram posts.
+- **Reviews.** The same token also pulls positive Facebook reviews (recommendations) with at least a sentence of text. The "What our clients say" section stays hidden until there is at least one. Reviewers show as first name and initial. If reviews are turned off on the Facebook page, the section simply stays hidden.
 - **Instagram not showing?** Check the Action log. It says if Instagram isn't linked to the Facebook page, or if the token is missing the `instagram_basic` permission. Facebook posts keep working either way.
 - **Before the token is added**, News & updates stays hidden and the gallery shows a "View on Facebook" button, so the site still works.
 - **Filters.** The Nails, Lashes, Brows and Tattoos buttons sort posts by words in the caption (for example "lash", "brow", "microblading", "tattoo"). A button only appears once a post matches it, so mentioning the treatment in captions keeps the filters accurate.
