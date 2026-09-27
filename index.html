@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RJS Beauty Room</title>
+<meta name="description" content="Award-winning home salon in Sheffield. Lashes, brows, gel nails, fine line tattoos and microblading, plus accredited 1:1 beauty training.">
+<meta property="og:title" content="RJS Beauty Room &amp; Training Academy">
+<meta property="og:description" content="Lashes, brows, gel nails, fine line tattoos and microblading in Sheffield. UK Top 50 Best Home Salon 2026.">
+<meta property="og:image" content="https://rjsbeautyroom.co.uk/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:url" content="https://rjsbeautyroom.co.uk/">
+<meta property="og:site_name" content="RJS Beauty Room">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rjsbeautyroom.co.uk/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BeautySalon", "name": "RJS Beauty Room & Training Academy", "url": "https://rjsbeautyroom.co.uk/", "image": "https://rjsbeautyroom.co.uk/assets/share.jpg", "logo": "https://rjsbeautyroom.co.uk/assets/icon.png", "description": "Award-winning home salon in Sheffield offering lashes, brows, gel nails, fine line tattoos and microblading, plus accredited 1:1 beauty training.", "address": {"@type": "PostalAddress", "addressLocality": "Sheffield", "addressCountry": "GB"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "10:00", "closes": "20:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "15:30"}], "award": "UK Top 50 Best Home Salon, UK Hair & Beauty Awards 2026", "sameAs": ["https://www.facebook.com/profile.php?id=61563781078767", "https://www.instagram.com/rjsbeautyroom/"], "potentialAction": {"@type": "ReserveAction", "target": "https://rjsbeautyroom.as.me/schedule/dfc4edcf"}}</script>
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1c1b19">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap">
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #1c1b19;          /* logo charcoal */
+    --ink-2: #252320;        /* raised panels */
+    --line: #3a352d;         /* hairlines, warm */
+    --gold: #e2c48b;         /* logo gold */
+    --gold-deep: #b98f4f;    /* wood-lit gold, hovers */
+    --cream: #f2ebdd;        /* body text */
+    --muted: #a79c89;        /* secondary text */
+    --display: "Cormorant", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --sans: "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+    --fb: "https://www.facebook.com/profile.php?id=61563781078767";
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--cream);
+    font: 300 1.0625rem/1.7 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  .wrap { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: 20px; }
+
+  /* Header */
+  .top {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+    background: color-mix(in srgb, var(--ink) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 10px; }
+  .brand img { height: 46px; width: auto; }
+  .nav { display: flex; align-items: center; gap: 28px; }
+  .nav a.link {
+    text-decoration: none; font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
+  }
+  .nav a.link:hover { color: var(--gold); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 22px;
+    font: 500 .78rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
+    color: var(--ink); background: var(--gold);
+    border: 1px solid var(--gold); border-radius: 999px;
+    cursor: pointer; transition: background .2s, color .2s;
+  }
+  .btn:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
+  .btn.ghost { background: transparent; color: var(--gold); }
+  .btn.ghost:hover { background: var(--gold); color: var(--ink); }
+  .btn svg { width: 16px; height: 16px; fill: currentColor; flex: none; }
+
+  /* Hero */
+  .hero img {
+    width: 100%; height: clamp(260px, 42vw, 620px);
+    object-fit: cover; object-position: center;
+  }
+  .hero-band { border-bottom: 1px solid var(--line); }
+  .hero-band .wrap {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;
+    padding-block: 34px;
+  }
+  .hero-band p {
+    margin: 0; font: italic 500 clamp(1.5rem, 3vw, 2.1rem)/1.25 var(--display); color: var(--cream);
+    text-wrap: balance; max-width: 30ch;
+  }
+  .hero-band p em { color: var(--gold); }
+  .hero-band .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* Section heads */
+  section { padding-block: clamp(64px, 9vw, 110px); }
+  .eyebrow {
+    display: flex; align-items: center; gap: 14px;
+    font: 400 .75rem/1 var(--sans); letter-spacing: .32em; text-transform: uppercase; color: var(--gold);
+    margin: 0 0 18px;
+  }
+  .eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--gold); }
+  h2 {
+    margin: 0 0 18px; font: 500 clamp(2.3rem, 5vw, 3.6rem)/1.05 var(--display); letter-spacing: -.01em;
+    text-wrap: balance;
+  }
+  h2 em { color: var(--gold); font-style: italic; }
+  .lede { margin: 0; color: var(--muted); max-width: 58ch; }
+
+  /* Services */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 52px; border-top: 1px solid var(--line); }
+  .svc { padding: 34px 30px 38px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; }
+  .svc + .svc { border-left: 1px solid var(--line); }
+  .svc h3 { margin: 0; font: italic 500 2.3rem/1 var(--display); color: var(--gold); }
+  .svc p { margin: 0; color: var(--muted); }
+  .svc ul { margin: 4px 0 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: .95rem; }
+  .svc li { display: flex; gap: 10px; }
+  .svc li::before { content: "·"; color: var(--gold); }
+  .svc .more { margin-top: auto; padding-top: 14px; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+  .svc .more:hover { color: var(--cream); }
+
+  /* Academy */
+  .academy { background: var(--ink-2); border-block: 1px solid var(--line); }
+  .academy .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+
+  /* Feed */
+  .feed-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; }
+  /* News & updates */
+  #updates { border-top: 1px solid var(--line); }
+  .news { list-style: none; margin: 44px 0 0; padding: 0; border-top: 1px solid var(--line); }
+  .news-item {
+    display: grid; grid-template-columns: 150px minmax(0, 1fr) 120px; gap: 28px; align-items: start;
+    padding-block: 28px; border-bottom: 1px solid var(--line);
+  }
+  .news-item.no-thumb { grid-template-columns: 150px minmax(0, 1fr); }
+  .news-date { margin: 4px 0 0; font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-variant-numeric: tabular-nums; }
+  .news-body { display: grid; gap: 12px; justify-items: start; }
+  .news-text { margin: 0; white-space: pre-line; max-width: 62ch; overflow-wrap: anywhere; }
+  .news-text.clamp { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .news-actions { display: flex; flex-wrap: wrap; gap: 22px; }
+  .text-link {
+    padding: 0; border: 0; background: none; cursor: pointer; text-decoration: none;
+    font: 400 .75rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold);
+  }
+  .text-link:hover { color: var(--cream); }
+  .news-thumb { padding: 0; border: 0; cursor: pointer; aspect-ratio: 1; width: 120px; max-width: 100%; overflow: hidden; background: var(--ink-2); }
+  .news-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+  .chip {
+    font: 400 .75rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase;
+    padding: 10px 18px; border-radius: 999px; cursor: pointer;
+    background: transparent; color: var(--muted); border: 1px solid var(--line);
+  }
+  .chip:hover { color: var(--gold); border-color: var(--gold-deep); }
+  .chip[aria-pressed="true"] { color: var(--ink); background: var(--gold); border-color: var(--gold); }
+
+  .gallery { margin-top: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .tile {
+    position: relative; padding: 0; border: 0; cursor: pointer; overflow: hidden;
+    aspect-ratio: 1; max-width: 100%; background: var(--ink-2);
+  }
+  .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, opacity .3s; }
+  .tile:hover img { transform: scale(1.04); opacity: .85; }
+  .tile .badge {
+    position: absolute; top: 10px; right: 10px;
+    display: inline-flex; align-items: center; gap: 5px;
+    font: 500 .7rem/1 var(--sans); letter-spacing: .08em; color: var(--cream);
+    background: rgba(20, 19, 17, .72); padding: 6px 8px; border-radius: 999px;
+  }
+  .tile .badge svg { width: 12px; height: 12px; fill: currentColor; }
+  .more-row { display: flex; justify-content: center; margin-top: 30px; }
+
+  .empty {
+    margin-top: 40px; border: 1px solid var(--line); background: var(--ink-2);
+    padding: 56px 20px; text-align: center; display: grid; gap: 18px; justify-items: center;
+  }
+  .empty h3 { margin: 0; font: italic 500 1.9rem/1.2 var(--display); }
+  .empty p { margin: 0; color: var(--muted); max-width: 44ch; }
+
+  /* Lightbox */
+  .lb { border: 0; padding: 0; background: transparent; max-width: min(1100px, calc(100vw - 32px)); width: 100%; color: var(--cream); }
+  .lb::backdrop { background: rgba(14, 13, 12, .92); }
+  .lb-inner { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); background: var(--ink); border: 1px solid var(--line); }
+  .lb-media { position: relative; background: #111; display: grid; place-items: center; min-height: 300px; }
+  .lb-media img { max-height: 80vh; width: 100%; object-fit: contain; }
+  .lb-nav {
+    position: absolute; top: 50%; translate: 0 -50%;
+    width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line);
+    background: rgba(20,19,17,.75); color: var(--gold); cursor: pointer; font-size: 1.1rem;
+  }
+  .lb-nav.prev { left: 10px; } .lb-nav.next { right: 10px; }
+  .lb-count { position: absolute; bottom: 10px; left: 50%; translate: -50% 0; font-size: .75rem; letter-spacing: .1em; color: var(--muted); }
+  .lb-side { padding: 28px 26px; display: flex; flex-direction: column; gap: 16px; max-height: 80vh; overflow-y: auto; }
+  .lb-date { margin: 0; font-size: .75rem; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+  .lb-text { margin: 0; white-space: pre-line; color: var(--cream); font-size: .98rem; }
+  .lb-side .btn { align-self: flex-start; margin-top: auto; }
+  .lb-close {
+    position: absolute; top: 12px; right: 12px; z-index: 2;
+    width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line);
+    background: var(--ink); color: var(--cream); cursor: pointer; font-size: 1.2rem; line-height: 1;
+  }
+  .lb-wrap { position: relative; }
+
+  /* Contact */
+  .contact { text-align: center; }
+  .contact .eyebrow { justify-content: center; }
+  .contact .eyebrow::after { content: ""; width: 34px; height: 1px; background: var(--gold); }
+  .contact .lede { margin-inline: auto; }
+  .contact .ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 34px; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 30px; color: var(--muted); font-size: .85rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 860px) {
+    .nav a.link { display: none; }
+    .services { grid-template-columns: 1fr; }
+    .svc + .svc { border-left: 0; }
+    .svc { padding-inline: 0; }
+    .academy .wrap { grid-template-columns: 1fr; }
+    .academy .glint { width: min(300px, 80%); }
+    .gallery { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .lb-inner { grid-template-columns: 1fr; }
+    .lb-media img { max-height: 60vh; }
+    .lb-side { max-height: none; }
+  }
+  @media (max-width: 560px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .news-item, .news-item.no-thumb { grid-template-columns: minmax(0, 1fr) 84px; gap: 10px 16px; }
+    .news-item.no-thumb { grid-template-columns: minmax(0, 1fr); }
+    .news-date { grid-column: 1 / -1; margin: 0; }
+    .news-thumb { width: 84px; }
+  }
+  @media (max-width: 420px) {
+    .brand img { height: 38px; }
+    .top .btn { padding: 10px 14px; letter-spacing: .12em; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+  /* ============ Premium finish ============ */
+
+  /* Metallic gold, matching the brushed-gold sign in the banner */
+  :root { --gold-metal: linear-gradient(100deg, #b98f4f 0%, #e9cd93 28%, #fff1cf 44%, #d9b472 58%, #b3884a 78%, #e2c48b 100%); }
+  .metal, h2 em, .hero-band p em, .svc h3 {
+    background: var(--gold-metal); background-size: 200% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    padding-right: .06em; /* stops the italic's last letter being clipped */
+  }
+  ::selection { background: var(--gold); color: var(--ink); }
+  html { scrollbar-color: var(--gold-deep) var(--ink); scrollbar-width: thin; }
+
+  /* Fine film grain over everything for a printed, tactile feel */
+  body::after {
+    content: ""; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 .95  0 0 0 0 .85  0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Header gains depth once you scroll */
+  .top { transition: background .4s, box-shadow .4s; }
+  .top .wrap { transition: padding .4s; }
+  .top.scrolled { background: color-mix(in srgb, var(--ink) 96%, transparent); box-shadow: 0 10px 30px -18px rgba(0,0,0,.8); }
+  .top.scrolled .wrap { padding-block: 6px; }
+  .nav a.link { position: relative; }
+  .nav a.link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: var(--gold);
+    transform: scaleX(0); transform-origin: right; transition: transform .45s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav a.link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+  /* Buttons: a soft light sweep on hover */
+  .btn { position: relative; overflow: hidden; isolation: isolate; }
+  .btn::after {
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: linear-gradient(105deg, transparent 30%, rgba(255,246,225,.55) 50%, transparent 70%);
+    transform: translateX(-120%); transition: transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .btn:hover::after { transform: translateX(120%); }
+  .btn:not(.ghost) { background: linear-gradient(100deg, #d7b574, #f0d9a6 50%, #d3ad69); border-color: #d9b87a; }
+  .btn:not(.ghost):hover { background: linear-gradient(100deg, #c9a262, #e6c98e 50%, #c29a58); }
+
+  /* Hero: parallax wrapper and slow settle */
+  .hero { overflow: hidden; background: #2b2118; }
+  .hero picture { display: block; will-change: transform; }
+  .hero img { animation: heroSettle 2.8s cubic-bezier(.2,.7,.2,1) 0s both; }
+  @keyframes heroSettle { from { transform: scale(1.12); filter: brightness(.6); } to { transform: scale(1); filter: none; } }
+  .hero-band p { animation: riseIn 1s cubic-bezier(.2,.7,.2,1) .35s both; }
+  .hero-band .ctas { animation: riseIn 1s cubic-bezier(.2,.7,.2,1) .55s both; }
+  .top { animation: dropIn .9s cubic-bezier(.2,.7,.2,1) .2s both; }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  @keyframes dropIn { from { opacity: 0; transform: translateY(-100%); } to { opacity: 1; transform: none; } }
+
+  /* Scrolling ribbon of services */
+  .ribbon { overflow: hidden; border-bottom: 1px solid var(--line); padding-block: 22px; background: var(--ink-2); }
+  .ribbon-track { display: flex; width: max-content; animation: ribbon 48s linear infinite; }
+  .ribbon:hover .ribbon-track { animation-play-state: paused; }
+  .ribbon-track span {
+    display: inline-flex; align-items: center; gap: 36px; padding-right: 36px; white-space: nowrap;
+    font: italic 500 clamp(1.6rem, 3vw, 2.3rem)/1 var(--display); color: var(--cream);
+  }
+  .ribbon-track i { font-style: normal; font-size: .9rem; color: var(--gold); }
+  @keyframes ribbon { to { transform: translateX(-50%); } }
+
+  /* Services: gold rule draws across the top on hover */
+  .svc { position: relative; transition: background .5s; }
+  .svc::before {
+    content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left; transition: transform .7s cubic-bezier(.2,.7,.2,1);
+  }
+  .svc:hover { background: linear-gradient(180deg, rgba(226,196,139,.06), transparent 70%); }
+  .svc:hover::before { transform: scaleX(1); }
+  .svc h3 { transition: background-position 1.2s; }
+  .svc:hover h3 { background-position: 100% 0; }
+
+  /* Logo with a light that glints across the gold */
+  .glint { position: relative; display: block; }
+  .glint > img { width: 100%; height: auto; }
+  .glint::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    -webkit-mask: url("assets/logo.webp") center / contain no-repeat; mask: url("assets/logo.webp") center / contain no-repeat;
+    background: linear-gradient(110deg, transparent 35%, rgba(255,250,235,.95) 50%, transparent 65%) no-repeat;
+    background-size: 250% 100%; background-position: 150% 0;
+  }
+  .academy .glint { justify-self: center; width: min(420px, 100%); }
+  .academy .glint::after { animation: glint 7s ease-in-out 2s infinite; }
+  @keyframes glint { 0% { background-position: 150% 0; } 22%, 100% { background-position: -60% 0; } }
+  @media (max-width: 860px) { .academy .glint { width: min(300px, 80%); } }
+
+  /* Gallery + news: gentle entrances */
+  .tile { animation: tileIn .7s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes tileIn { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+  .tile::after { content: ""; position: absolute; inset: 0; border: 1px solid transparent; transition: border-color .4s, inset .4s; pointer-events: none; }
+  .tile:hover::after { border-color: rgba(226,196,139,.8); inset: 8px; }
+  .lb[open] { animation: lbIn .45s cubic-bezier(.2,.7,.2,1); }
+  .lb[open]::backdrop { animation: fade .45s ease; }
+  @keyframes lbIn { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
+  @keyframes fade { from { opacity: 0; } }
+
+  /* Scroll reveals (only when JavaScript and motion are available) */
+  html.js-reveal [data-reveal] {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 1s cubic-bezier(.2,.7,.2,1) var(--d, 0s), transform 1s cubic-bezier(.2,.7,.2,1) var(--d, 0s);
+  }
+  html.js-reveal [data-reveal].in { opacity: 1; transform: none; }
+  .eyebrow::before { transform-origin: left; }
+  html.js-reveal .eyebrow[data-reveal]::before { transform: scaleX(0); transition: transform 1.1s cubic-bezier(.2,.7,.2,1) .25s; }
+  html.js-reveal .eyebrow[data-reveal].in::before { transform: scaleX(1); }
+
+  /* ============ Salon content ============ */
+  .muted { color: var(--muted); font-size: .92rem; margin: 0; }
+  a.inline { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  /* Hero band: tagline + award pill */
+  .hero-copy { display: grid; gap: 16px; justify-items: start; }
+  .award-pill {
+    display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
+    padding: 8px 18px 8px 10px; border: 1px solid rgba(226,196,139,.35); border-radius: 999px;
+    background: linear-gradient(100deg, rgba(226,196,139,.10), rgba(226,196,139,.02));
+    animation: riseIn 1s cubic-bezier(.2,.7,.2,1) .7s both;
+  }
+  html.intro-on:not(.intro-revealed) .award-pill { animation-play-state: paused; }
+  .award-pill:hover { border-color: var(--gold); }
+  .laurel { width: 40px; height: 40px; color: var(--gold); flex: none; }
+  .award-pill span { display: grid; gap: 3px; }
+  .award-pill b { font: 500 .72rem/1.2 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+  .award-pill small { font-size: .78rem; color: var(--muted); }
+
+  /* Treatments: four columns */
+  .services { grid-template-columns: repeat(4, 1fr); }
+  .svc { padding: 30px 24px 34px; }
+  .svc-price { margin: 0; font: italic 500 1.05rem/1 var(--display); color: var(--muted); }
+  .svc h3 { font-size: 2rem; }
+  .svc-note { margin: 22px 0 0; color: var(--muted); font-size: .92rem; }
+
+  /* About */
+  .about .wrap { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(36px, 6vw, 88px); align-items: center; }
+  .about-media { position: relative; margin: 0 0 40px; max-width: 100%; }
+  .portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border: 1px solid var(--line); }
+  .cert {
+    position: absolute; right: -18px; bottom: -40px; width: 38%; aspect-ratio: 652 / 800; object-fit: cover;
+    border: 6px solid var(--ink); outline: 1px solid var(--gold-deep); box-shadow: 0 24px 40px -18px rgba(0,0,0,.9);
+    transform: rotate(3deg);
+  }
+  .about-copy p:not(.eyebrow) { color: var(--muted); max-width: 58ch; margin: 0 0 14px; }
+  .about-copy h2 { margin-bottom: 22px; }
+  .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 30px 0 0; border-top: 1px solid var(--line); }
+  .facts div { padding: 18px 14px 0 0; }
+  .facts div + div { padding-left: 16px; border-left: 1px solid var(--line); }
+  .facts dt { font: 500 2rem/1 var(--display); color: var(--gold); font-variant-numeric: tabular-nums; }
+  .facts dd { margin: 8px 0 0; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); line-height: 1.5; }
+
+  /* Academy */
+  .academy .wrap { display: block; }
+  .academy-head { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .6fr); gap: 40px; align-items: center; }
+  .academy-head .glint { width: min(260px, 100%); justify-self: end; }
+  .course-feature {
+    margin-top: 52px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: stretch;
+    padding: clamp(26px, 4vw, 44px); border: 1px solid rgba(226,196,139,.4);
+    background: linear-gradient(135deg, rgba(226,196,139,.09), transparent 55%), var(--ink);
+  }
+  .cf-kicker { margin: 0 0 8px; font: italic 500 1.2rem/1.2 var(--display); color: var(--gold); }
+  .course-feature h3 { margin: 0; font: 500 clamp(2rem, 4vw, 2.8rem)/1.05 var(--display); }
+  .cf-sub { margin: 8px 0 18px; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+  .cf-main > p:not([class]) { color: var(--muted); max-width: 60ch; margin: 0; }
+  .cf-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; font-size: .95rem; }
+  .cf-list li, .cc-learn li { display: flex; gap: 10px; align-items: baseline; }
+  .cf-list li::before, .cc-learn li::before { content: "✓"; color: var(--gold); font-size: .85rem; flex: none; }
+  .cf-side { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; padding-left: 40px; border-left: 1px solid var(--line); text-align: center; }
+  .cf-price { margin: 0; font: 500 clamp(3.2rem, 7vw, 4.6rem)/1 var(--display); background: var(--gold-metal); -webkit-background-clip: text; background-clip: text; color: transparent; font-variant-numeric: tabular-nums; }
+  .cf-price-note { margin: 0 0 16px; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+
+  .course-grid { margin-top: 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+  .course-card { border: 1px solid var(--line); background: var(--ink); padding: clamp(24px, 3.5vw, 36px); }
+  .cc-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; }
+  .cc-head h3 { margin: 0; font: 500 1.8rem/1.1 var(--display); }
+  .cc-price { margin: 0; font: 500 2rem/1 var(--display); color: var(--gold); }
+  .cc-price.small { font: italic 500 1.05rem/1.2 var(--display); color: var(--muted); }
+  .cc-sub { margin: 6px 0 0; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+  .cc-label { margin: 26px 0 12px; font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+  .cc-learn { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 20px; font-size: .92rem; }
+  .price-list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 12px; }
+  .price-list li { display: flex; align-items: baseline; gap: 10px; }
+  .c-name small { display: block; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .c-dots { flex: 1; border-bottom: 1px dotted rgba(226,196,139,.35); transform: translateY(-4px); min-width: 16px; }
+  .c-price { font: 500 1.25rem/1 var(--display); color: var(--gold); font-variant-numeric: tabular-nums; }
+  .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips li { font-size: .8rem; padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--cream); }
+  .cc-foot { margin: 16px 0 0; font-size: .8rem; color: var(--muted); }
+  .academy-cta { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+  .academy-cta p { margin: 0; color: var(--muted); max-width: 56ch; overflow-wrap: anywhere; }
+  .academy-cta a:not(.btn) { color: var(--gold); }
+  .academy-cta .ctas, .visit .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* Visit & book */
+  .visit { border-top: 1px solid var(--line); }
+  .visit-head { text-align: center; display: grid; justify-items: center; }
+  .visit-head .eyebrow { justify-content: center; }
+  .visit-head .eyebrow::after { content: ""; width: 34px; height: 1px; background: var(--gold); }
+  .visit-head .ctas { justify-content: center; margin-top: 30px; }
+  .visit-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+  .visit-card { padding: 28px 28px 8px; display: grid; gap: 12px; align-content: start; }
+  .visit-card + .visit-card { border-left: 1px solid var(--line); }
+  .visit-card .cc-label { margin: 0; }
+  .visit-big { margin: 0; font: italic 500 2.2rem/1.1 var(--display); }
+  .hours { border-collapse: collapse; width: 100%; font-size: .95rem; font-variant-numeric: tabular-nums; }
+  .hours th { text-align: left; font-weight: 400; padding: 5px 0; color: var(--cream); }
+  .hours td { text-align: right; padding: 5px 0; color: var(--cream); }
+  .hours tr.closed th, .hours tr.closed td { color: var(--muted); }
+  .hours tr + tr th, .hours tr + tr td { border-top: 1px solid rgba(58,53,45,.6); }
+  .policy { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: .95rem; }
+  .policy li { display: flex; gap: 10px; }
+  .policy li::before { content: "✦"; color: var(--gold); font-size: .7rem; line-height: 2.2; flex: none; }
+  .foot-links { display: flex; flex-wrap: wrap; gap: 20px; }
+
+  @media (max-width: 1020px) {
+    .services { grid-template-columns: repeat(2, 1fr); }
+    .svc:nth-child(3) { border-left: 0; }
+    .svc:nth-child(n+3) { border-top: 0; }
+  }
+  @media (max-width: 860px) {
+    .services { grid-template-columns: 1fr; }
+    .about .wrap, .academy-head, .course-grid, .course-feature, .visit-grid { grid-template-columns: 1fr; }
+    .academy-head .glint { display: none; }
+    .cf-side { padding-left: 0; padding-top: 26px; border-left: 0; border-top: 1px solid var(--line); }
+    .visit-card + .visit-card { border-left: 0; border-top: 1px solid var(--line); }
+    .visit-card { padding-inline: 0; padding-bottom: 24px; }
+    .about-media { max-width: 460px; }
+    .cert { right: -8px; }
+    .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .facts div:nth-child(3) { border-left: 0; padding-left: 0; }
+  }
+  @media (max-width: 560px) {
+    .cf-list, .cc-learn { grid-template-columns: 1fr; }
+  }
+
+  /* ============ Opening animation (loading gauge) ============ */
+  .intro { display: none; }
+  html.intro-on:not(.intro-done) body { overflow: hidden; }
+  html.intro-on .intro {
+    position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; cursor: pointer;
+    background: radial-gradient(ellipse at 50% 45%, #2a2621 0%, var(--ink) 60%, #141311 100%);
+  }
+  .intro-inner { display: grid; justify-items: center; gap: 22px; animation: fade .6s ease both; }
+  .intro-stage { position: relative; width: min(260px, 64vw); aspect-ratio: 1; max-width: 100%; display: grid; place-items: center; }
+  .intro-ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); overflow: visible; }
+  .intro-ring circle { fill: none; }
+  .intro-ring .ticks { stroke: var(--gold); stroke-width: 5; stroke-dasharray: 1 13.66; opacity: .28; }
+  .intro-ring .track { stroke: rgba(226,196,139,.12); stroke-width: 1.5; }
+  .intro-ring .fill { stroke: url(#ringGold); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 653.5; stroke-dashoffset: 653.5; filter: drop-shadow(0 0 5px rgba(226,196,139,.55)); }
+  .intro .glint { width: 64%; animation: logoIn 1.1s cubic-bezier(.2,.7,.2,1) .1s both; }
+  .intro .glint::after { animation: glintLoop 1.6s ease-in-out .5s infinite; }
+  .intro-pct { margin: 0; font: italic 500 1.5rem/1 var(--display); color: var(--gold); font-variant-numeric: tabular-nums; min-width: 3.2ch; text-align: center; }
+  .intro-word { margin: 0; font: 400 .68rem/1 var(--sans); letter-spacing: .5em; text-transform: uppercase; color: var(--muted); padding-left: .5em; animation: wordIn 1.2s ease .4s both; }
+  @keyframes logoIn { from { opacity: 0; transform: scale(.9); filter: blur(10px); } to { opacity: 1; transform: none; filter: blur(0); } }
+  @keyframes glintLoop { 0% { background-position: 150% 0; } 70%, 100% { background-position: -60% 0; } }
+  @keyframes wordIn { from { opacity: 0; letter-spacing: .8em; } to { opacity: 1; } }
+
+  /* Finish: a warm gold bloom, then the screen lifts away */
+  .intro::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0;
+    background: radial-gradient(circle at 50% 45%, rgba(240,214,160,.55), rgba(226,196,139,.12) 45%, transparent 70%);
+  }
+  .intro.bloom::after { animation: bloom .7s ease-out forwards; }
+  .intro.bloom .intro-stage { animation: pulse .7s ease-out; }
+  .intro.lift { animation: curtain 1s cubic-bezier(.76,0,.24,1) forwards; }
+  .intro.lift .intro-inner { animation: introLift 1s cubic-bezier(.76,0,.24,1) forwards; }
+  @keyframes bloom { 0% { opacity: 0; } 35% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes pulse { 40% { transform: scale(1.04); } }
+  @keyframes curtain { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 100% 0); visibility: hidden; } }
+  @keyframes introLift { to { transform: translateY(-50px); opacity: 0; } }
+  html.intro-done .intro { display: none !important; }
+
+  /* Hold the hero's entrance until the loader lifts */
+  html.intro-on:not(.intro-revealed) .hero img,
+  html.intro-on:not(.intro-revealed) .hero-band p,
+  html.intro-on:not(.intro-revealed) .hero-band .ctas,
+  html.intro-on:not(.intro-revealed) .top { animation-play-state: paused; }
+
+  /* Gold progress line along the top as you scroll */
+  .progress { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; height: 2px; z-index: 95; pointer-events: none; background: rgba(226,196,139,.08); }
+  .progress span { display: block; height: 100%; background: var(--gold-metal); transform: scaleX(0); transform-origin: left; box-shadow: 0 0 8px rgba(226,196,139,.5); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; }
+    .ribbon-track { transform: none; }
+  }
+</style>
+<script>
+  // Decide before first paint: show the loading intro unless the visitor prefers reduced motion.
+  (function () {
+    var d = document.documentElement;
+    var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!still) d.classList.add("intro-on");
+    if (!still && "IntersectionObserver" in window) d.classList.add("js-reveal");
+  })();
+</script>
+</head>
+<body>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-inner">
+    <div class="intro-stage">
+      <svg class="intro-ring" viewBox="0 0 240 240">
+        <defs>
+          <linearGradient id="ringGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#b98f4f"/><stop offset=".45" stop-color="#fff1cf"/><stop offset="1" stop-color="#d9b472"/>
+          </linearGradient>
+        </defs>
+        <circle class="ticks" cx="120" cy="120" r="112"/>
+        <circle class="track" cx="120" cy="120" r="104"/>
+        <circle class="fill" id="introFill" cx="120" cy="120" r="104"/>
+      </svg>
+      <span class="glint"><img src="assets/logo.webp" alt="" width="700" height="637"></span>
+    </div>
+    <p class="intro-pct" id="introPct">0%</p>
+    <p class="intro-word">Lashes · Brows · Nails · Tattoos</p>
+  </div>
+</div>
+<div class="progress" aria-hidden="true"><span id="progress"></span></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="RJS Beauty Room home"><img src="assets/logo.webp" alt="RJS Beauty Room &amp; Training Academy" width="700" height="637"></a>
+    <nav class="nav" aria-label="Main">
+      <a class="link" href="#treatments">Treatments</a>
+      <a class="link" href="#about">About</a>
+      <a class="link" href="#academy">Academy</a>
+      <a class="link" href="#updates" id="navUpdates" hidden>Updates</a>
+      <a class="link" href="#latest">Latest work</a>
+      <a class="btn" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <picture>
+      <source media="(max-width: 700px)" srcset="assets/banner-sm.webp">
+      <img src="assets/banner.webp" alt="The RJS Beauty Room sign in gold on a wood-panelled wall, framed by white flowers" width="1920" height="768" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="hero-band">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="hero-line">Lashes, brows, nails <em>&amp;</em> fine line tattoos in Sheffield.</p>
+        <a class="award-pill" href="#about"><svg class="laurel" viewBox="0 0 64 64" aria-hidden="true"><path d="M20 52c-9-6-13-17-10-28M44 52c9-6 13-17 10-28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><g fill="currentColor"><ellipse cx="9.5" cy="30" rx="2.2" ry="4.5" transform="rotate(-20 9.5 30)"/><ellipse cx="10.5" cy="39" rx="2.2" ry="4.5" transform="rotate(-40 10.5 39)"/><ellipse cx="15" cy="47" rx="2.2" ry="4.5" transform="rotate(-60 15 47)"/><ellipse cx="54.5" cy="30" rx="2.2" ry="4.5" transform="rotate(20 54.5 30)"/><ellipse cx="53.5" cy="39" rx="2.2" ry="4.5" transform="rotate(40 53.5 39)"/><ellipse cx="49" cy="47" rx="2.2" ry="4.5" transform="rotate(60 49 47)"/></g><text x="32" y="30" text-anchor="middle" font-family="Cormorant, Georgia, serif" font-size="15" font-style="italic" fill="currentColor">Top</text><text x="32" y="44" text-anchor="middle" font-family="Cormorant, Georgia, serif" font-size="15" fill="currentColor">50</text></svg><span><b>UK Top 50 · Best Home Salon</b><small>UK Hair &amp; Beauty Awards 2026</small></span></a>
+      </div>
+      <div class="ctas">
+        <a class="btn" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm12 8H5v9h14v-9zM5 8h14V6H5v2z"/></svg> Book online</a>
+        <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61563781078767" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5V14h2.7v8h3.3z"/></svg> Message us</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track"><span>Lash Extensions <i aria-hidden="true">✦</i></span><span>Brows <i aria-hidden="true">✦</i></span><span>Gel Nails <i aria-hidden="true">✦</i></span><span>Fine Line Tattoos <i aria-hidden="true">✦</i></span><span>Microblading <i aria-hidden="true">✦</i></span><span>Training Academy <i aria-hidden="true">✦</i></span><span>UK Top 50 Home Salon <i aria-hidden="true">✦</i></span><span>Sheffield <i aria-hidden="true">✦</i></span><span>Lash Extensions <i aria-hidden="true">✦</i></span><span>Brows <i aria-hidden="true">✦</i></span><span>Gel Nails <i aria-hidden="true">✦</i></span><span>Fine Line Tattoos <i aria-hidden="true">✦</i></span><span>Microblading <i aria-hidden="true">✦</i></span><span>Training Academy <i aria-hidden="true">✦</i></span><span>UK Top 50 Home Salon <i aria-hidden="true">✦</i></span><span>Sheffield <i aria-hidden="true">✦</i></span></div>
+  </div>
+
+  <section id="treatments">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Treatments</p>
+      <h2 data-reveal style="--d:.08s">Crafted for you, <em>by appointment</em></h2>
+      <p class="lede" data-reveal style="--d:.16s">Every treatment is booked one to one, so you get time, care and full attention. See the full menu with prices and pick a time that suits you on our booking page.</p>
+
+      <div class="services">
+        <article class="svc" data-reveal style="--d:.1s">
+          <p class="svc-price">See booking page</p>
+          <h3>Lashes &amp; Brows</h3>
+          <p>Lashes and brows shaped to suit your features, from soft and natural to full glam.</p>
+          <ul><li>Classic &amp; volume lash extensions</li><li>Lash lift &amp; tint</li><li>Brow wax &amp; tint</li><li>Hybrid brows &amp; lamination</li></ul>
+          <a class="more" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book lashes &amp; brows →</a>
+        </article>
+        <article class="svc" data-reveal style="--d:.2s">
+          <p class="svc-price">See booking page</p>
+          <h3>Gel Nails</h3>
+          <p>Neat, glossy gel nails that last, in a huge range of shades.</p>
+          <ul><li>Gel nails</li><li>Wide colour range</li><li>Clean, long-lasting finish</li></ul>
+          <a class="more" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book nails →</a>
+        </article>
+        <article class="svc" data-reveal style="--d:.3s">
+          <p class="svc-price">From £30</p>
+          <h3>Fine Line Tattoos</h3>
+          <p>Delicate fine line tattoos. Bring your idea and we'll design it with you.</p>
+          <ul><li>Custom fine line designs</li><li>Small, delicate pieces</li><li>Priced by design</li></ul>
+          <a class="more" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book a tattoo →</a>
+        </article>
+        <article class="svc" data-reveal style="--d:.4s">
+          <p class="svc-price">£190</p>
+          <h3>Microblading</h3>
+          <p>Natural-looking, hair-stroke brows that save you time every morning.</p>
+          <ul><li>Brows mapped to your face</li><li>8-week top-up included</li><li>Aftercare advice</li></ul>
+          <a class="more" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book microblading →</a>
+        </article>
+      </div>
+      <p class="svc-note" data-reveal>Appointments only, no walk-ins. The full price list is on our <a class="inline" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">booking page</a>.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <figure class="about-media" data-reveal>
+        <img class="portrait" src="assets/ramone.webp" alt="Ramone holding the RJS Beauty Room award certificate in her salon" width="900" height="1125" loading="lazy">
+        <img class="cert" src="assets/award.webp" alt="Certificate: RJS Beauty Room, Best Home Salon, The UK Top 50 Winner 2026, UK Hair and Beauty Awards" width="652" height="800" loading="lazy">
+      </figure>
+      <div class="about-copy" data-reveal style="--d:.12s">
+        <p class="eyebrow">Meet the face behind the brand</p>
+        <h2>Hi, I'm <em>Ramone</em></h2>
+        <p>I'm a mum of four with a huge passion for the beauty industry. I've worked in beauty for six years, qualifying in lashes and brows in 2022, and I've since worked in salons, including running my own, before opening my own home salon.</p>
+        <p>In 2026 RJS Beauty Room was named one of the UK's Top 50 Best Home Salons at the UK Hair &amp; Beauty Awards.</p>
+        <p>I qualified to teach in January 2026 and now run accredited 1:1 courses. I love helping people grow their confidence and skills, and I'm always learning so I can give my clients and students the very best.</p>
+        <dl class="facts">
+          <div><dt>6</dt><dd>years in beauty</dd></div>
+          <div><dt>2022</dt><dd>qualified in lashes &amp; brows</dd></div>
+          <div><dt>2026</dt><dd>UK Top 50 Home Salon</dd></div>
+          <div><dt>BTA</dt><dd>accredited trainer</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="academy" class="academy">
+    <div class="wrap">
+      <div class="academy-head">
+        <div>
+          <p class="eyebrow" data-reveal>Training Academy</p>
+          <h2 data-reveal style="--d:.08s">Learn the trade <em>with us</em></h2>
+          <p class="lede" data-reveal style="--d:.16s">Accredited 1:1 courses taught in person, one skill at a time. Small, supportive and practical, with live models and continued support after you qualify.</p>
+        </div>
+        <span class="glint" data-reveal style="--d:.15s"><img src="assets/logo.webp" alt="" width="700" height="637" loading="lazy"></span>
+      </div>
+
+      <article class="course-feature" data-reveal>
+        <div class="cf-main">
+          <p class="cf-kicker">Your new chapter starts here</p>
+          <h3>Beginner Lash Training</h3>
+          <p class="cf-sub">One full day · fast track to volume</p>
+          <p>A flexible, supportive course designed for mums who want more freedom, more income and more time with their family. Learn to work around school hours, from home, on your own terms.</p>
+          <ul class="cf-list"><li>1 full day</li><li>Fast track to volume</li><li>2 live models</li><li>Full theory</li><li>Full kit included</li><li>Certificate provided</li><li>Insurable on completion</li><li>BTA accredited</li><li>Beginner friendly</li><li>Supportive mum community</li></ul>
+        </div>
+        <div class="cf-side">
+          <p class="cf-price">£499</p>
+          <p class="cf-price-note">Full kit included</p>
+          <a class="btn" href="https://www.facebook.com/profile.php?id=61563781078767" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5V14h2.7v8h3.3z"/></svg> Enquire</a>
+        </div>
+      </article>
+
+      <div class="course-grid">
+        <article class="course-card" data-reveal>
+          <div class="cc-head">
+            <h3>Lash Lift &amp; Brow Lamination</h3>
+            <p class="cc-price">£275</p>
+          </div>
+          <p class="cc-sub">1 to 1 in-depth training</p>
+          <p class="cc-label">What you'll learn</p>
+          <ul class="cc-learn"><li>Health &amp; safety at work</li><li>Sterilisation &amp; sanitisation</li><li>Brow lamination procedure</li><li>Consultations</li><li>Brow mapping &amp; tinting</li><li>Insurance</li><li>Lash &amp; brow anatomy</li><li>Aftercare</li><li>Shield sizes &amp; curls</li><li>Contra-actions</li><li>Treatment preparation</li><li>Contra-indications</li><li>Types of lifting solutions</li><li>Patch testing</li></ul>
+        </article>
+
+        <article class="course-card" data-reveal style="--d:.12s">
+          <div class="cc-head">
+            <h3>1:1 Courses</h3>
+            <p class="cc-price small">Mastering one skill at a time</p>
+          </div>
+          <ul class="price-list"><li><span class="c-name">Classic lash extensions <small>Kit included</small></span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£299</span></li><li><span class="c-name">Volume lash extensions <small>Kit included</small></span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£299</span></li><li><span class="c-name">Lash lift &amp; tint</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£175</span></li><li><span class="c-name">Brow wax &amp; tint</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£175</span></li><li><span class="c-name">Hybrid brows</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£175</span></li><li><span class="c-name">Brow lamination</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£175</span></li><li><span class="c-name">Lash masterclass</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£200</span></li><li><span class="c-name">Lash refresher class</span><span class="c-dots" aria-hidden="true"></span><span class="c-price">£250</span></li></ul>
+          <p class="cc-label">Every course includes</p>
+          <ul class="chips"><li>BTA accreditation*</li><li>Client record cards</li><li>Product recommendations</li><li>Live models &amp; demonstrations</li><li>Continued support</li><li>Social media tips</li><li>Treatment checklists</li><li>Digital forever manuals</li></ul>
+          <p class="cc-foot">*BTA accreditation on all courses except masterclasses.</p>
+        </article>
+      </div>
+
+      <div class="academy-cta" data-reveal>
+        <p>To book a course or ask a question, message us on Facebook or email <a href="mailto:Missrjstutorials@gmail.com">Missrjstutorials@gmail.com</a>.</p>
+        <div class="ctas">
+          <a class="btn" href="https://www.facebook.com/profile.php?id=61563781078767" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5V14h2.7v8h3.3z"/></svg> Message us</a>
+          <a class="btn ghost" href="https://www.instagram.com/rjsbeautyroom/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zM17 5.8a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM21.9 7.9c-.1-1.6-.4-3-1.6-4.2S17.7 2.2 16.1 2.1C14.5 2 9.5 2 7.9 2.1 6.3 2.2 4.9 2.5 3.7 3.7S2.2 6.3 2.1 7.9C2 9.5 2 14.5 2.1 16.1c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.6.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.6 0-8.2zM19.8 18a3.1 3.1 0 0 1-1.8 1.8c-1.2.5-4.1.4-5.9.4s-4.7.1-5.9-.4A3.1 3.1 0 0 1 4.4 18c-.5-1.2-.4-4.1-.4-6s-.1-4.7.4-5.9A3.1 3.1 0 0 1 6.2 4.3C7.4 3.8 10.3 3.9 12 3.9s4.7-.1 5.9.4a3.1 3.1 0 0 1 1.8 1.8c.5 1.2.4 4.1.4 5.9s.1 4.8-.4 6z"/></svg> Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="updates" hidden>
+    <div class="wrap">
+      <div class="feed-head">
+        <div>
+          <p class="eyebrow" data-reveal>News &amp; updates</p>
+          <h2 data-reveal style="--d:.08s">What's <em>happening</em></h2>
+          <p class="lede" data-reveal style="--d:.16s">Offers, availability and announcements, posted on our Facebook page.</p>
+        </div>
+        <a class="btn ghost" data-fb href="https://www.facebook.com/profile.php?id=61563781078767" target="_blank" rel="noopener">Follow on Facebook</a>
+      </div>
+      <ol class="news" id="news" data-reveal></ol>
+      <div class="more-row" id="newsMoreRow" hidden><button class="btn ghost" type="button" id="newsMore">Older posts</button></div>
+    </div>
+  </section>
+
+  <section id="latest">
+    <div class="wrap">
+      <div class="feed-head">
+        <div>
+          <p class="eyebrow" data-reveal>Latest work</p>
+          <h2 data-reveal style="--d:.08s">Fresh from <em>the room</em></h2>
+          <p class="lede" data-reveal style="--d:.16s">Our newest lashes, brows, nails and tattoos, straight from our Facebook and Instagram.</p>
+        </div>
+        <a class="btn ghost" data-fb href="https://www.facebook.com/profile.php?id=61563781078767" target="_blank" rel="noopener">Open Facebook</a>
+      </div>
+
+      <div class="filters" id="filters" hidden>
+        <button class="chip" type="button" data-cat="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-cat="nails" aria-pressed="false">Nails</button>
+        <button class="chip" type="button" data-cat="lashes" aria-pressed="false">Lashes</button>
+        <button class="chip" type="button" data-cat="brows" aria-pressed="false">Brows</button>
+        <button class="chip" type="button" data-cat="tattoos" aria-pressed="false">Tattoos</button>
+      </div>
+      <div class="gallery" id="gallery" aria-live="polite" data-reveal></div>
+      <div class="more-row" id="moreRow" hidden><button class="btn ghost" type="button" id="moreBtn">Show more</button></div>
+
+      <div class="empty" id="empty" hidden>
+        <h3>See our latest work</h3>
+        <p>Our newest lashes, brows, nails and tattoos are on our Facebook and Instagram.</p>
+        <a class="btn" data-fb href="https://www.facebook.com/profile.php?id=61563781078767" target="_blank" rel="noopener">View on Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <dialog class="lb" id="lb" aria-label="Post">
+    <div class="lb-wrap">
+      <button class="lb-close" type="button" id="lbClose" aria-label="Close">×</button>
+      <div class="lb-inner">
+        <div class="lb-media">
+          <img id="lbImg" src="" alt="">
+          <button class="lb-nav prev" type="button" id="lbPrev" aria-label="Previous photo">‹</button>
+          <button class="lb-nav next" type="button" id="lbNext" aria-label="Next photo">›</button>
+          <span class="lb-count" id="lbCount"></span>
+        </div>
+        <div class="lb-side">
+          <p class="lb-date" id="lbDate"></p>
+          <p class="lb-text" id="lbText"></p>
+          <a class="btn ghost" id="lbLink" href="#" target="_blank" rel="noopener">View on Facebook</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <section id="contact" class="visit">
+    <div class="wrap">
+      <div class="visit-head">
+        <p class="eyebrow" data-reveal>Visit &amp; book</p>
+        <h2 data-reveal style="--d:.08s">Ready to <em>book?</em></h2>
+        <p class="lede" data-reveal style="--d:.16s">Book online in a couple of minutes, or message us on Facebook with any questions.</p>
+        <div class="ctas" data-reveal style="--d:.24s">
+          <a class="btn" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm12 8H5v9h14v-9zM5 8h14V6H5v2z"/></svg> Book online</a>
+          <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61563781078767" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5V14h2.7v8h3.3z"/></svg> Message us</a>
+          <a class="btn ghost" href="https://www.instagram.com/rjsbeautyroom/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zM17 5.8a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM21.9 7.9c-.1-1.6-.4-3-1.6-4.2S17.7 2.2 16.1 2.1C14.5 2 9.5 2 7.9 2.1 6.3 2.2 4.9 2.5 3.7 3.7S2.2 6.3 2.1 7.9C2 9.5 2 14.5 2.1 16.1c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.6.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.6 0-8.2zM19.8 18a3.1 3.1 0 0 1-1.8 1.8c-1.2.5-4.1.4-5.9.4s-4.7.1-5.9-.4A3.1 3.1 0 0 1 4.4 18c-.5-1.2-.4-4.1-.4-6s-.1-4.7.4-5.9A3.1 3.1 0 0 1 6.2 4.3C7.4 3.8 10.3 3.9 12 3.9s4.7-.1 5.9.4a3.1 3.1 0 0 1 1.8 1.8c.5 1.2.4 4.1.4 5.9s.1 4.8-.4 6z"/></svg> Instagram</a>
+        </div>
+      </div>
+
+      <div class="visit-grid">
+        <div class="visit-card" data-reveal>
+          <p class="cc-label">Location</p>
+          <p class="visit-big">Sheffield, UK</p>
+          <p class="muted">Your full address is shared when you book.</p>
+        </div>
+        <div class="visit-card" data-reveal style="--d:.1s">
+          <p class="cc-label">Opening hours</p>
+          <table class="hours"><tbody><tr><th scope="row">Monday</th><td>10am – 8.30pm</td></tr><tr><th scope="row">Tuesday</th><td>10am – 8.30pm</td></tr><tr><th scope="row">Wednesday</th><td>10am – 8.30pm</td></tr><tr><th scope="row">Thursday</th><td>10am – 8.30pm</td></tr><tr class=closed><th scope="row">Friday</th><td>Closed</td></tr><tr><th scope="row">Saturday</th><td>10am – 3.30pm</td></tr><tr class=closed><th scope="row">Sunday</th><td>Closed</td></tr></tbody></table>
+          <p class="muted">By appointment only. No walk-ins.</p>
+        </div>
+        <div class="visit-card" data-reveal style="--d:.2s">
+          <p class="cc-label">Booking policy</p>
+          <ul class="policy">
+            <li>A non-refundable booking fee secures your appointment.</li>
+            <li>Cancellations within 48 hours are charged at 50% of the treatment price.</li>
+            <li>Missed appointments are charged in full.</li>
+          </ul>
+          <p class="muted">Thank you for understanding. It helps us keep appointments free for everyone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> RJS Beauty Room &amp; Training Academy · Sheffield, UK</span>
+    <span class="foot-links"><a class="" href="https://rjsbeautyroom.as.me/schedule/dfc4edcf" target="_blank" rel="noopener">Book online</a><a class="" href="https://www.facebook.com/profile.php?id=61563781078767" target="_blank" rel="noopener">Facebook</a><a class="" href="https://www.instagram.com/rjsbeautyroom/" target="_blank" rel="noopener">Instagram</a></span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var PAGE = "https://www.facebook.com/profile.php?id=61563781078767";
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    var root = document.documentElement;
+    var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Opening animation: the gold ring fills with a counter while the page loads,
+    // then a gold bloom and the screen lifts to reveal the banner.
+    var intro = document.getElementById("intro");
+    if (root.classList.contains("intro-on")) {
+      var fill = document.getElementById("introFill"), pct = document.getElementById("introPct");
+      var CIRC = 653.5, MIN_TIME = 1600, t0 = performance.now();
+      var loaded = document.readyState === "complete", finishing = false, done = false, shown = 0;
+      window.addEventListener("load", function () { loaded = true; });
+
+      var draw = function (v) {
+        fill.style.strokeDashoffset = (CIRC * (1 - v / 100)).toFixed(1);
+        pct.textContent = Math.round(v) + "%";
+      };
+      var reveal = function () {
+        if (done) return; done = true;
+        intro.classList.add("bloom");
+        setTimeout(function () {
+          intro.classList.add("lift");
+          root.classList.add("intro-revealed");
+          setTimeout(function () { root.classList.add("intro-done"); }, 1000);
+        }, 380);
+      };
+      var tick = function (now) {
+        if (done) return;
+        var t = Math.min(1, (now - t0) / MIN_TIME);
+        var target = 100 * (1 - Math.pow(1 - t, 2));      // eased climb over the minimum time
+        if (!loaded) target = Math.min(target, 92);       // hold near the top until the page has loaded
+        shown += (target - shown) * (finishing ? 0.35 : 0.2);
+        if (t >= 1 && loaded) { finishing = true; if (shown > 99.4) { draw(100); return setTimeout(reveal, 180); } }
+        draw(shown);
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+
+      setTimeout(function () { draw(100); reveal(); }, 5000);   // never keep anyone waiting on a slow connection
+      var skip = function () { draw(100); reveal(); window.removeEventListener("keydown", skip); };
+      intro.addEventListener("click", skip);
+      window.addEventListener("keydown", skip);
+    } else {
+      root.classList.add("intro-revealed");
+    }
+
+    // Header deepens on scroll; banner drifts gently (parallax)
+    var header = document.querySelector(".top");
+    var heroPic = document.querySelector(".hero picture");
+    var progress = document.getElementById("progress");
+    var ticking = false;
+    function onScroll() {
+      var y = window.scrollY || 0;
+      header.classList.toggle("scrolled", y > 40);
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.transform = "scaleX(" + (max > 0 ? Math.min(1, y / max) : 0).toFixed(4) + ")";
+      if (!still && heroPic && y < window.innerHeight * 1.2) heroPic.style.transform = "translate3d(0," + (y * 0.28).toFixed(1) + "px,0)";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+    onScroll();
+
+    // Reveal sections as they scroll into view
+    if (root.classList.contains("js-reveal")) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { rootMargin: "0px 0px -8% 0px" });
+      document.querySelectorAll("[data-reveal]").forEach(function (el) { io.observe(el); });
+    }
+
+    var $ = function (id) { return document.getElementById(id); };
+    var gallery = $("gallery"), filters = $("filters"), moreRow = $("moreRow"), empty = $("empty");
+    var PER_PAGE = 12;
+    var posts = [], shown = PER_PAGE, cat = "all";
+    var CATS = {
+      nails: /\bnails?\b|\bgel\b|biab|acrylic|manicure|pedicure|infill|polygel/i,
+      lashes: /lash/i,
+      brows: /\bbrows?\b|microblad|lamination|\bhybrid brow/i,
+      tattoos: /tattoo|\bink\b|\binked\b|fine ?line/i
+    };
+    var ICON_STACK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h12v13H4zM8 3h12v13h-2V5H8z"/></svg>';
+    var ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>';
+
+    function visible() {
+      return cat === "all" ? posts : posts.filter(function (p) { return CATS[cat].test(p.text || ""); });
+    }
+
+    function render() {
+      var list = visible();
+      gallery.innerHTML = "";
+      list.slice(0, shown).forEach(function (p, n) {
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "tile";
+        b.style.animationDelay = ((n % PER_PAGE) * 0.05).toFixed(2) + "s";
+        b.setAttribute("aria-label", "Open post" + (p.text ? ": " + p.text.slice(0, 80) : ""));
+        var img = document.createElement("img");
+        img.src = p.images[0].src; img.alt = ""; img.loading = "lazy"; img.decoding = "async";
+        b.appendChild(img);
+        if (p.video || p.images.length > 1) {
+          var badge = document.createElement("span");
+          badge.className = "badge";
+          badge.innerHTML = p.video ? ICON_PLAY : ICON_STACK + p.images.length;
+          b.appendChild(badge);
+        }
+        b.addEventListener("click", function () { openPost(p); });
+        gallery.appendChild(b);
+      });
+      moreRow.hidden = list.length <= shown;
+    }
+
+    filters.addEventListener("click", function (e) {
+      var btn = e.target.closest(".chip"); if (!btn) return;
+      cat = btn.dataset.cat; shown = PER_PAGE;
+      filters.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c === btn ? "true" : "false"); });
+      render();
+    });
+    $("moreBtn").addEventListener("click", function () { shown += PER_PAGE; render(); });
+
+    // Lightbox
+    var lb = $("lb"), cur = null, idx = 0;
+    function show() {
+      var im = cur.images[idx];
+      $("lbImg").src = im.src;
+      $("lbImg").alt = cur.text ? cur.text.slice(0, 120) : "Photo from RJS Beauty Room";
+      var many = cur.images.length > 1;
+      $("lbPrev").hidden = $("lbNext").hidden = !many;
+      $("lbCount").textContent = many ? (idx + 1) + " / " + cur.images.length : "";
+    }
+    function openPost(p) {
+      cur = p; idx = 0;
+      var d = new Date(p.date);
+      $("lbDate").textContent = isNaN(d) ? "" : d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+      $("lbText").textContent = p.text || "";
+      var where = p.source === "instagram" ? "Instagram" : "Facebook";
+      $("lbLink").href = p.link || PAGE;
+      $("lbLink").textContent = (p.video ? "Watch on " : "View on ") + where;
+      show();
+      if (lb.showModal) lb.showModal(); else lb.setAttribute("open", "");
+    }
+    function step(n) { if (!cur) return; idx = (idx + n + cur.images.length) % cur.images.length; show(); }
+    $("lbPrev").addEventListener("click", function () { step(-1); });
+    $("lbNext").addEventListener("click", function () { step(1); });
+    $("lbClose").addEventListener("click", function () { lb.close(); });
+    lb.addEventListener("click", function (e) { if (e.target === lb) lb.close(); });
+    lb.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
+    });
+
+    // News & updates: every post with a caption, newest first
+    var NEWS_PAGE = 5, newsShown = NEWS_PAGE, newsList = [];
+    function fmtDate(iso) {
+      var d = new Date(iso);
+      return isNaN(d) ? "" : d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+    }
+    function drawNews() {
+      var ol = $("news");
+      ol.innerHTML = "";
+      newsList.slice(0, newsShown).forEach(function (p) {
+        var li = document.createElement("li");
+        var hasImg = p.images && p.images.length;
+        li.className = "news-item" + (hasImg ? "" : " no-thumb");
+
+        var date = document.createElement("p");
+        date.className = "news-date"; date.textContent = fmtDate(p.date);
+        li.appendChild(date);
+
+        var body = document.createElement("div"); body.className = "news-body";
+        var text = document.createElement("p"); text.className = "news-text clamp"; text.textContent = p.text;
+        body.appendChild(text);
+        var actions = document.createElement("div"); actions.className = "news-actions";
+        var more = document.createElement("button");
+        more.type = "button"; more.className = "text-link"; more.textContent = "Read more"; more.hidden = true;
+        more.addEventListener("click", function () {
+          var open = text.classList.toggle("clamp");
+          more.textContent = open ? "Read more" : "Show less";
+        });
+        var fb = document.createElement("a");
+        fb.className = "text-link"; fb.href = p.link || PAGE; fb.target = "_blank"; fb.rel = "noopener";
+        fb.textContent = "View on Facebook →";
+        actions.appendChild(more); actions.appendChild(fb);
+        body.appendChild(actions);
+        li.appendChild(body);
+
+        if (hasImg) {
+          var t = document.createElement("button");
+          t.type = "button"; t.className = "news-thumb"; t.setAttribute("aria-label", "View photos from this post");
+          var im = document.createElement("img"); im.src = p.images[0].src; im.alt = ""; im.loading = "lazy";
+          t.appendChild(im);
+          t.addEventListener("click", function () { openPost(p); });
+          li.appendChild(t);
+        }
+        ol.appendChild(li);
+        // Only offer "Read more" when the text is actually cut off
+        requestAnimationFrame(function () { more.hidden = text.scrollHeight <= text.clientHeight + 2; });
+      });
+      $("newsMoreRow").hidden = newsList.length <= newsShown;
+    }
+    function renderNews(all) {
+      // Announcements come from Facebook; Instagram posts go to the gallery only
+      newsList = all.filter(function (p) { return p.text && p.source !== "instagram"; });
+      if (!newsList.length) return;
+      $("updates").hidden = false;
+      $("navUpdates").hidden = false;
+      drawNews();
+    }
+    $("newsMore").addEventListener("click", function () { newsShown += NEWS_PAGE; drawNews(); });
+
+    fetch("data/posts.json", { cache: "no-cache" })
+      .then(function (r) { return r.ok ? r.json() : { posts: [] }; })
+      .catch(function () { return { posts: [] }; })
+      .then(function (data) {
+        var all = data.posts || [];
+        renderNews(all);
+        // Gallery: the page's own photos and videos (not shared-link previews)
+        posts = all.filter(function (p) { return p.images && p.images.length && p.gallery !== false; });
+        if (!posts.length) { empty.hidden = false; return; }
+        // Only offer filters that have matching posts
+        var any = false;
+        filters.querySelectorAll(".chip[data-cat]").forEach(function (c) {
+          var k = c.dataset.cat; if (k === "all") return;
+          var has = posts.some(function (p) { return CATS[k].test(p.text || ""); });
+          c.hidden = !has; if (has) any = true;
+        });
+        filters.hidden = !any;
+        render();
+      });
+  })();
+</script>
+</body>
+</html>

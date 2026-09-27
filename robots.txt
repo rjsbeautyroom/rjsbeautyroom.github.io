@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rjsbeautyroom.co.uk/sitemap.xml
