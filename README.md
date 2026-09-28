@@ -10,8 +10,13 @@ into `data/`, and redeploys the site.
 
 | Path | What it is |
 |---|---|
-| `index.html` | The whole website |
-| `assets/` | Logo, banner, icons |
+| `index.html` | The homepage |
+| `guides.html` | Lash, brow, nail & tattoo style guides page |
+| `404.html` | Branded "page not found" page (GitHub shows it for any wrong address) |
+| `assets/site.css` | Styles shared by every page |
+| `assets/common.js` | Shared behaviour: smooth scrolling, header, scroll reveals |
+| `assets/guides.js` | The interactive lash, brow, nail and tattoo drawings |
+| `assets/` | Logo, banner, icons and the files above |
 | `data/posts.json`, `data/img/` | Facebook and Instagram posts and photos (filled in automatically, don't edit) |
 | `scripts/fetch-facebook.mjs` | Pulls posts and photos from Facebook and Instagram |
 | `.github/workflows/facebook.yml` | Runs the script every 3 hours and deploys the site |
