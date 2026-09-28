@@ -12,9 +12,15 @@ into `data/`, and redeploys the site.
 |---|---|
 | `index.html` | The homepage |
 | `guides.html` | Lash, brow, nail & tattoo style guides page |
+| `academy.html` | Training Academy page (courses, course finder, student photos, FAQ) |
 | `404.html` | Branded "page not found" page (GitHub shows it for any wrong address) |
 | `assets/site.css` | Styles shared by every page |
 | `assets/common.js` | Shared behaviour: smooth scrolling, header, scroll reveals |
+| `assets/announcement.json` | The announcement bar (switched off until `"show": true`) |
+| `assets/academy.js` | Academy course finder and photo spaces |
+| `assets/academy/` | Academy photos: `hero.webp` and `student-1.webp` to `student-6.webp` |
+| `assets/theme.json` | Seasonal theme switch (`"season": "auto"`, `"none"`, `"halloween"`, `"christmas"`, `"newyear"`, `"valentines"`, `"mothersday"`, `"easter"`) |
+| `assets/seasons.js` | The seasonal decorations |
 | `assets/guides.js` | The interactive lash, brow, nail and tattoo drawings |
 | `assets/` | Logo, banner, icons and the files above |
 | `data/posts.json`, `data/img/` | Facebook and Instagram posts and photos (filled in automatically, don't edit) |
@@ -74,3 +80,6 @@ After a minute or two the site shows the latest Facebook and Instagram posts. Fr
 - **If there's a long gap between posts**, GitHub may pause scheduled Actions after 60 days without any repository activity. It emails the repo owner when it does. Re-enable it on the Actions tab.
 - **Posting straight away.** To update the site without waiting, open the Actions tab and click **Run workflow**.
 - **Domain.** The site is set up for `rjsbeautyroom.co.uk` (link previews, Google listing, sitemap). Add it under **Settings → Pages → Custom domain**, then tick **Enforce HTTPS**. DNS at the registrar: four `A` records for `@` pointing to 185.199.108.153, 185.199.109.153, 185.199.110.153 and 185.199.111.153, and a `CNAME` for `www` pointing to `rjsbeautyroom.github.io`.
+- **Announcement bar.** Edit `assets/announcement.json` to show a gold strip at the top of every page, e.g. `{"show": true, "text": "Cancellation slot this Friday at 2pm.", "link": "https://rjsbeautyroom.as.me/schedule/dfc4edcf", "linkText": "Book now"}`. Set `"show": false` to hide it again. Visitors can close it with the ×.
+- **Academy photos.** Put photos in `assets/academy/` named `hero.webp` and `student-1.webp` to `student-6.webp`. On the live site any missing photo is simply left out (and the Student work section hides if it has none); everywhere else a gold placeholder shows which file goes where.
+- **Seasonal themes.** Themes switch on and off by themselves with `"season": "auto"` in `assets/theme.json`: Halloween 17–31 October, Christmas 1–27 December, New Year 28 December–2 January, Valentine's 1–14 February, Mother's Day the week up to Mothering Sunday (UK), and Easter from Palm Sunday to Easter Monday. Mother's Day and Easter move each year and are worked out automatically. Set `"season"` to `"none"` to turn themes off completely, or to a theme name (e.g. `"christmas"`) to force that theme on whatever the date. Themes are decoration only and never block clicks. Moving effects stay on the homepage banner, so nothing moves over text; the other pages get a small garland in its own space above the heading. Every theme also restyles the site (accent colours, buttons, background tint, a decoration on each card and symbols in the ribbon) without changing the layout. Preview any theme by adding `?season=christmas` (or `#season-christmas`) to the address, or test the calendar with `?season=auto&date=2026-10-20`. Visitors with reduced motion turned on see the ornaments without the moving effects.

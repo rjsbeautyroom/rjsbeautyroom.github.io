@@ -1,0 +1,13 @@
+{
+  "season": "auto",
+  "options": [
+    "auto",
+    "none",
+    "halloween",
+    "christmas",
+    "newyear",
+    "valentines",
+    "mothersday",
+    "easter"
+  ]
+}
