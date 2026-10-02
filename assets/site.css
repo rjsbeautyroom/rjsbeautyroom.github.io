@@ -753,7 +753,24 @@ html.menu-open .to-top, dialog[open] ~ .to-top { opacity: 0; pointer-events: non
   background: radial-gradient(circle at 50% 55%, transparent 7px, var(--gold) 7.5px, var(--gold) 8.5px, transparent 9px); }
 .ph-note code { color: var(--gold); font-size: .72rem; word-break: break-all; }
 .ph-grid { margin-top: 36px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.ph-grid .photo { aspect-ratio: 1; }
+.ph-grid .photo { aspect-ratio: 4 / 5; }
+.ph-hero img { object-position: 50% 30%; }
+.photo[data-zoom] { cursor: zoom-in; }
+.photo[data-zoom] img { transition: transform .9s cubic-bezier(.2,.7,.2,1), filter .5s; }
+.photo[data-zoom]:hover img { transform: scale(1.04); }
+.photo[data-zoom]:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.ph-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 16px 14px; background: linear-gradient(transparent, rgba(14,13,12,.85));
+  font: 500 .72rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.photo.empty .ph-cap { display: none; }
+/* academy photo viewer */
+.aclb { border: 0; padding: 0; background: transparent; width: min(760px, calc(100vw - 24px)); max-width: none; color: var(--cream); overflow: visible; }
+.aclb::backdrop { background: rgba(14,13,12,.94); }
+.aclb img { display: block; width: 100%; max-height: 82vh; object-fit: contain; background: #111; border: 1px solid var(--line); }
+.aclb-cap { margin: 12px 0 0; text-align: center; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); min-height: 1em; }
+.aclb-x, .aclb-nav { position: absolute; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: rgba(20,19,17,.8); color: var(--gold); cursor: pointer; font-size: 1.25rem; line-height: 1; }
+.aclb-x { top: 10px; right: 10px; color: var(--cream); }
+.aclb-nav { top: 50%; translate: 0 -50%; }
+.aclb-nav.prev { left: 10px; } .aclb-nav.next { right: 10px; }
 
 /* course finder */
 .finder { margin-top: 40px; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); border: 1px solid var(--line); background: var(--ink); }
@@ -790,6 +807,9 @@ html.menu-open .to-top, dialog[open] ~ .to-top { opacity: 0; pointer-events: non
   .ac-facts li:nth-child(even) { border-left: 1px solid var(--line); }
   .ac-facts li:last-child { grid-column: 1 / -1; border-bottom: 0; border-left: 0; }
   .ph-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ph-train .photo:first-child { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+  .ph-grads { grid-template-columns: 1fr; max-width: 420px; }
+  .ph-grads .photo { aspect-ratio: 4 / 5; }
 }
 
 /* ============ Seasonal themes (decoration only, never clickable) ============ */

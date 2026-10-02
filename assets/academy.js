@@ -16,6 +16,43 @@
     probe.src = img.getAttribute("src");
   });
 
+  // Photo viewer: tap a training or graduate photo to see it full size
+  (function () {
+    var dlg = document.getElementById("aclb");
+    if (!dlg) return;
+    var big = document.getElementById("aclbImg"), cap = document.getElementById("aclbCap"), list = [], at = 0;
+    function figs() { return Array.prototype.slice.call(document.querySelectorAll("[data-zoom]:not(.empty):not([hidden])")); }
+    function show(i) {
+      at = (i + list.length) % list.length;
+      var img = list[at].querySelector("img"), c = list[at].querySelector(".ph-cap");
+      big.src = img.currentSrc || img.src; big.alt = img.alt; cap.textContent = c ? c.textContent : "";
+    }
+    function open(fig) {
+      list = figs(); show(list.indexOf(fig));
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+    }
+    document.querySelectorAll("[data-zoom]").forEach(function (fig) {
+      fig.tabIndex = 0; fig.setAttribute("role", "button");
+      fig.setAttribute("aria-label", "View photo: " + fig.querySelector("img").alt);
+      fig.addEventListener("click", function () { if (!fig.classList.contains("empty")) open(fig); });
+      fig.addEventListener("keydown", function (e) { if ((e.key === "Enter" || e.key === " ") && !fig.classList.contains("empty")) { e.preventDefault(); open(fig); } });
+    });
+    document.getElementById("aclbX").addEventListener("click", function () { dlg.close(); });
+    document.getElementById("aclbPrev").addEventListener("click", function () { show(at - 1); });
+    document.getElementById("aclbNext").addEventListener("click", function () { show(at + 1); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") show(at - 1);
+      if (e.key === "ArrowRight") show(at + 1);
+    });
+    var x0 = null;
+    dlg.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    dlg.addEventListener("touchend", function (e) {
+      if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 50) show(at + (dx < 0 ? 1 : -1));
+    });
+  })();
+
   // Course finder
   var dataEl = document.getElementById("finderData");
   if (!dataEl) return;
