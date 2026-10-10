@@ -10,7 +10,7 @@ import path from "node:path";
 
 const TOKEN = process.env.FB_PAGE_TOKEN;
 const API = process.env.FB_API_BASE || "https://graph.facebook.com/v23.0";
-const MAX_POSTS = 40;        // how many posts to keep on the site
+const MAX_POSTS = 300;       // how many posts to keep on the site (enough for her whole page history)
 const MAX_IMAGES_PER_POST = 8;
 const MAX_IG = 30;          // how many Instagram posts to add to the gallery
 const MAX_REVIEWS = 12;     // how many Facebook reviews to show
@@ -159,7 +159,7 @@ async function main() {
   const fbPosts = [];
   let next = `/me/posts?fields=${encodeURIComponent(fields)}&limit=50`;
   let pages = 0;
-  while (next && fbPosts.length < MAX_POSTS && pages < 4) {
+  while (next && fbPosts.length < MAX_POSTS && pages < 12) {
     const res = next.startsWith("http") ? await fetchPage(next) : await graph(next);
     for (const p of res.data || []) {
       const { images, video, gallery } = imagesFor(p);
